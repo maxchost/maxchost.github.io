@@ -367,7 +367,7 @@
 
 
   
-    <article id="post-学习笔记/DFS，BFS" class="article article-type-post  article-index" itemscope itemprop="blogPost">
+    <article id="post-学习笔记/c++错题集" class="article article-type-post  article-index" itemscope itemprop="blogPost">
   <div class="article-inner">
     
       <header class="article-header">
@@ -375,7 +375,7 @@
   
     <h1 itemprop="name">
 	
-	  <a class="article-title" href="/2022/05/16/%E5%AD%A6%E4%B9%A0%E7%AC%94%E8%AE%B0/DFS%EF%BC%8CBFS/" target="_blank">DFS BFS 在迷宫题中的运用</a>
+	  <a class="article-title" href="/2022/05/16/%E5%AD%A6%E4%B9%A0%E7%AC%94%E8%AE%B0/c++%E9%94%99%E9%A2%98%E9%9B%86/" target="_blank">c++错题集</a>
   
     </h1>
   
@@ -383,7 +383,7 @@
 
   
   
-<a href="/2022/05/16/%E5%AD%A6%E4%B9%A0%E7%AC%94%E8%AE%B0/DFS%EF%BC%8CBFS/" class="archive-article-date">
+<a href="/2022/05/16/%E5%AD%A6%E4%B9%A0%E7%AC%94%E8%AE%B0/c++%E9%94%99%E9%A2%98%E9%9B%86/" class="archive-article-date">
         <time datetime="2022-05-16T11:20:10.000Z" itemprop="datePublished"><i class="icon-calendar icon"></i>2022-05-16</time>
 </a>
 
@@ -396,11 +396,45 @@
   
   <div class="article-entry" itemprop="articleBody">
     
-    <h1 id="图的种类"><a href="#图的种类" class="headerlink" title="图的种类"></a>图的种类</h1><p>1，无向图 ：在无向图中，每个定点和其他顶点通过连线连接</p>
-<p>2，有向图 ：有向图中的相连线是有方向的</p>
-<p>3，权重图 ：在权重图中，每条相连线有各自的权重</p>
-<p><img src="https://test-1311941730.cos.ap-nanjing.myqcloud.com/image-20220516182621418.png" alt="image-20220516182621418"></p>
-<p><img src="https://test-1311941730.cos.ap-nanjing.myqcloud.com/image-20220516182647682.png" alt="image-20220516182647682"></p>
+    <h1 id="学习通中错题集"><a href="#学习通中错题集" class="headerlink" title="学习通中错题集"></a>学习通中错题集</h1><p><img src="https://test-1311941730.cos.ap-nanjing.myqcloud.com/image-20220516214307885.png"></p>
+<p><img src="https://test-1311941730.cos.ap-nanjing.myqcloud.com/image-20220516214326127.png" alt="image-20220516214326127"></p>
+<p>这道题之前做错了一次，现在做又错了一次。呜呜呜</p>
+<p><img src="https://test-1311941730.cos.ap-nanjing.myqcloud.com/image-20220516214430909.png" alt="image-20220516214430909"></p>
+<p>构造函数自己定义了后就不生产默认缺参的了</p>
+<p><img src="https://test-1311941730.cos.ap-nanjing.myqcloud.com/image-20220516214518805.png" alt="image-20220516214518805"></p>
+<p>友元关系 1，不可传递  2，单向 3，不可继承</p>
+<p><img src="https://test-1311941730.cos.ap-nanjing.myqcloud.com/image-20220516214614509.png" alt="image-20220516214614509"></p>
+<p>友元函数不是成员函数，但可以访问所以的成员</p>
+<p><img src="https://test-1311941730.cos.ap-nanjing.myqcloud.com/image-20220516214742344.png" alt="image-20220516214742344"></p>
+<p>没毛病</p>
+<p><img src="https://test-1311941730.cos.ap-nanjing.myqcloud.com/image-20220516214830118.png" alt="image-20220516214830118"></p>
+<p>静态成员直接写就好了，主要在类外初始化</p>
+<p>常成员可以用列表初始化</p>
+<p>只能在构造函数这用列表</p>
+<p><img src="https://test-1311941730.cos.ap-nanjing.myqcloud.com/image-20220516214956622.png" alt="image-20220516214956622"></p>
+<p>常成员只能用常函数，但非常成员却可以调用常函数</p>
+<p><img src="https://test-1311941730.cos.ap-nanjing.myqcloud.com/image-20220516215053502.png" alt="image-20220516215053502"></p>
+<p><img src="https://test-1311941730.cos.ap-nanjing.myqcloud.com/image-20220516215144582.png" alt="image-20220516215144582"></p>
+<p>用对象初始化时，调用复制构造函数与重载=无关。</p>
+<p>顺便一提，重载=只能为类成员函数</p>
+<p><img src="https://test-1311941730.cos.ap-nanjing.myqcloud.com/image-20220516215337517.png" alt="image-20220516215337517"></p>
+<p>左边基类 = 右边 派生类 符合这个格式就可以</p>
+<p>返回值是基类，故最后派生类要转化成基类，c正确</p>
+<p>而d，把派生类等于基类，错误</p>
+<p><img src="https://test-1311941730.cos.ap-nanjing.myqcloud.com/image-20220516215603838.png" alt="image-20220516215603838"></p>
+<p>保护继承不能直接访问</p>
+<p><img src="https://test-1311941730.cos.ap-nanjing.myqcloud.com/image-20220516215654454.png" alt="image-20220516215654454"></p>
+<p><img src="https://test-1311941730.cos.ap-nanjing.myqcloud.com/image-20220516215753517.png" alt="image-20220516215753517"></p>
+<p>– 不用int</p>
+<p><img src="https://test-1311941730.cos.ap-nanjing.myqcloud.com/image-20220516215906981.png" alt="image-20220516215906981"></p>
+<p>这个要说一下 要在类中定义 ，无需参数，无需返回值，故D错误</p>
+<p><img src="https://test-1311941730.cos.ap-nanjing.myqcloud.com/image-20220516220043928.png" alt="image-20220516220043928"></p>
+<p>由于基类是虚函数</p>
+<p>继承到派生类，如果有相同的函数会覆盖。故调用的全是派生类的。</p>
+<p><img src="https://test-1311941730.cos.ap-nanjing.myqcloud.com/image-20220516220325846.png" alt="image-20220516220325846"></p>
+<p>B *p=&amp;obj</p>
+<p>同理，有虚函数，有虚函数的则用派生类的，没有的则用基类的</p>
+<p>故为DB</p>
 
     
 
@@ -417,7 +451,7 @@
 		<ul class="article-tag-list">
 			 
         		<li class="article-tag-list-item">
-        			<a href="javascript:void(0)" class="js-tag article-tag-list-link color5">算法学习</a>
+        			<a href="javascript:void(0)" class="js-tag article-tag-list-link color4">c++</a>
         		</li>
       		
 		</ul>
@@ -427,7 +461,7 @@
 
     
     <p class="article-more-link">
-      <a class="article-more-a" href="/2022/05/16/%E5%AD%A6%E4%B9%A0%E7%AC%94%E8%AE%B0/DFS%EF%BC%8CBFS/">展开全文 >></a>
+      <a class="article-more-a" href="/2022/05/16/%E5%AD%A6%E4%B9%A0%E7%AC%94%E8%AE%B0/c++%E9%94%99%E9%A2%98%E9%9B%86/">展开全文 >></a>
     </p>
     
 
@@ -573,7 +607,7 @@
 
 
   
-    <article id="post-学习笔记/c++错题集" class="article article-type-post  article-index" itemscope itemprop="blogPost">
+    <article id="post-学习笔记/DFS，BFS" class="article article-type-post  article-index" itemscope itemprop="blogPost">
   <div class="article-inner">
     
       <header class="article-header">
@@ -581,7 +615,7 @@
   
     <h1 itemprop="name">
 	
-	  <a class="article-title" href="/2022/05/16/%E5%AD%A6%E4%B9%A0%E7%AC%94%E8%AE%B0/c++%E9%94%99%E9%A2%98%E9%9B%86/" target="_blank">c++错题集</a>
+	  <a class="article-title" href="/2022/05/16/%E5%AD%A6%E4%B9%A0%E7%AC%94%E8%AE%B0/DFS%EF%BC%8CBFS/" target="_blank">DFS BFS 在迷宫题中的运用</a>
   
     </h1>
   
@@ -589,7 +623,7 @@
 
   
   
-<a href="/2022/05/16/%E5%AD%A6%E4%B9%A0%E7%AC%94%E8%AE%B0/c++%E9%94%99%E9%A2%98%E9%9B%86/" class="archive-article-date">
+<a href="/2022/05/16/%E5%AD%A6%E4%B9%A0%E7%AC%94%E8%AE%B0/DFS%EF%BC%8CBFS/" class="archive-article-date">
         <time datetime="2022-05-16T11:20:10.000Z" itemprop="datePublished"><i class="icon-calendar icon"></i>2022-05-16</time>
 </a>
 
@@ -602,45 +636,11 @@
   
   <div class="article-entry" itemprop="articleBody">
     
-    <h1 id="学习通中错题集"><a href="#学习通中错题集" class="headerlink" title="学习通中错题集"></a>学习通中错题集</h1><p><img src="https://test-1311941730.cos.ap-nanjing.myqcloud.com/image-20220516214307885.png"></p>
-<p><img src="https://test-1311941730.cos.ap-nanjing.myqcloud.com/image-20220516214326127.png" alt="image-20220516214326127"></p>
-<p>这道题之前做错了一次，现在做又错了一次。呜呜呜</p>
-<p><img src="https://test-1311941730.cos.ap-nanjing.myqcloud.com/image-20220516214430909.png" alt="image-20220516214430909"></p>
-<p>构造函数自己定义了后就不生产默认缺参的了</p>
-<p><img src="https://test-1311941730.cos.ap-nanjing.myqcloud.com/image-20220516214518805.png" alt="image-20220516214518805"></p>
-<p>友元关系 1，不可传递  2，单向 3，不可继承</p>
-<p><img src="https://test-1311941730.cos.ap-nanjing.myqcloud.com/image-20220516214614509.png" alt="image-20220516214614509"></p>
-<p>友元函数不是成员函数，但可以访问所以的成员</p>
-<p><img src="https://test-1311941730.cos.ap-nanjing.myqcloud.com/image-20220516214742344.png" alt="image-20220516214742344"></p>
-<p>没毛病</p>
-<p><img src="https://test-1311941730.cos.ap-nanjing.myqcloud.com/image-20220516214830118.png" alt="image-20220516214830118"></p>
-<p>静态成员直接写就好了，主要在类外初始化</p>
-<p>常成员可以用列表初始化</p>
-<p>只能在构造函数这用列表</p>
-<p><img src="https://test-1311941730.cos.ap-nanjing.myqcloud.com/image-20220516214956622.png" alt="image-20220516214956622"></p>
-<p>常成员只能用常函数，但非常成员却可以调用常函数</p>
-<p><img src="https://test-1311941730.cos.ap-nanjing.myqcloud.com/image-20220516215053502.png" alt="image-20220516215053502"></p>
-<p><img src="https://test-1311941730.cos.ap-nanjing.myqcloud.com/image-20220516215144582.png" alt="image-20220516215144582"></p>
-<p>用对象初始化时，调用复制构造函数与重载=无关。</p>
-<p>顺便一提，重载=只能为类成员函数</p>
-<p><img src="https://test-1311941730.cos.ap-nanjing.myqcloud.com/image-20220516215337517.png" alt="image-20220516215337517"></p>
-<p>左边基类 = 右边 派生类 符合这个格式就可以</p>
-<p>返回值是基类，故最后派生类要转化成基类，c正确</p>
-<p>而d，把派生类等于基类，错误</p>
-<p><img src="https://test-1311941730.cos.ap-nanjing.myqcloud.com/image-20220516215603838.png" alt="image-20220516215603838"></p>
-<p>保护继承不能直接访问</p>
-<p><img src="https://test-1311941730.cos.ap-nanjing.myqcloud.com/image-20220516215654454.png" alt="image-20220516215654454"></p>
-<p><img src="https://test-1311941730.cos.ap-nanjing.myqcloud.com/image-20220516215753517.png" alt="image-20220516215753517"></p>
-<p>– 不用int</p>
-<p><img src="https://test-1311941730.cos.ap-nanjing.myqcloud.com/image-20220516215906981.png" alt="image-20220516215906981"></p>
-<p>这个要说一下 要在类中定义 ，无需参数，无需返回值，故D错误</p>
-<p><img src="https://test-1311941730.cos.ap-nanjing.myqcloud.com/image-20220516220043928.png" alt="image-20220516220043928"></p>
-<p>由于基类是虚函数</p>
-<p>继承到派生类，如果有相同的函数会覆盖。故调用的全是派生类的。</p>
-<p><img src="https://test-1311941730.cos.ap-nanjing.myqcloud.com/image-20220516220325846.png" alt="image-20220516220325846"></p>
-<p>B *p=&amp;obj</p>
-<p>同理，有虚函数，有虚函数的则用派生类的，没有的则用基类的</p>
-<p>故为DB</p>
+    <h1 id="图的种类"><a href="#图的种类" class="headerlink" title="图的种类"></a>图的种类</h1><p>1，无向图 ：在无向图中，每个定点和其他顶点通过连线连接</p>
+<p>2，有向图 ：有向图中的相连线是有方向的</p>
+<p>3，权重图 ：在权重图中，每条相连线有各自的权重</p>
+<p><img src="https://test-1311941730.cos.ap-nanjing.myqcloud.com/image-20220516182621418.png" alt="image-20220516182621418"></p>
+<p><img src="https://test-1311941730.cos.ap-nanjing.myqcloud.com/image-20220516182647682.png" alt="image-20220516182647682"></p>
 
     
 
@@ -657,7 +657,7 @@
 		<ul class="article-tag-list">
 			 
         		<li class="article-tag-list-item">
-        			<a href="javascript:void(0)" class="js-tag article-tag-list-link color4">c++</a>
+        			<a href="javascript:void(0)" class="js-tag article-tag-list-link color5">算法学习</a>
         		</li>
       		
 		</ul>
@@ -667,7 +667,7 @@
 
     
     <p class="article-more-link">
-      <a class="article-more-a" href="/2022/05/16/%E5%AD%A6%E4%B9%A0%E7%AC%94%E8%AE%B0/c++%E9%94%99%E9%A2%98%E9%9B%86/">展开全文 >></a>
+      <a class="article-more-a" href="/2022/05/16/%E5%AD%A6%E4%B9%A0%E7%AC%94%E8%AE%B0/DFS%EF%BC%8CBFS/">展开全文 >></a>
     </p>
     
 
@@ -1652,11 +1652,7 @@
           <ul class="article-tag-list" q-show="showTags">
              
               <li class="article-tag-list-item">
-                <a href="javascript:void(0)" class="js-tag color3">逆向</a>
-              </li>
-             
-              <li class="article-tag-list-item">
-                <a href="javascript:void(0)" class="js-tag color5">算法学习</a>
+                <a href="javascript:void(0)" class="js-tag color4">c++</a>
               </li>
              
               <li class="article-tag-list-item">
@@ -1664,7 +1660,11 @@
               </li>
              
               <li class="article-tag-list-item">
-                <a href="javascript:void(0)" class="js-tag color4">c++</a>
+                <a href="javascript:void(0)" class="js-tag color3">逆向</a>
+              </li>
+             
+              <li class="article-tag-list-item">
+                <a href="javascript:void(0)" class="js-tag color5">算法学习</a>
               </li>
             
             <div class="clearfix"></div>
