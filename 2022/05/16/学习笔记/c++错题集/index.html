@@ -6,16 +6,16 @@
   <meta name="renderer" content="webkit">
   <meta http-equiv="X-UA-Compatible" content="IE=edge" >
   <link rel="dns-prefetch" href="http://example.com">
-  <title>C++学习笔记 | Topdog的博客</title>
+  <title>c++错题集 | Topdog的博客</title>
   <meta name="generator" content="hexo-theme-yilia-plus">
   <meta name="viewport" content="width=device-width, initial-scale=1, maximum-scale=1">
   
-  <meta name="description" content="前言：还得多练，我阿咔哥说得对，菜就多练。 学习通中错题集  这道题之前做错了一次，现在做又错了一次。呜呜呜  构造函数自己定义了后就不生产默认缺参的了  友元关系 1，不可传递  2，单向 3，不可继承  友元函数不是成员函数，但可以访问所以的成员  没毛病  静态成员直接写就好了，主要在类外初始化 常成员可以用列表初始化 只能在构造函数这用列表  常成员只能用常函数，但非常成员却可以调用常函数">
+  <meta name="description" content="学习通中错题集  这道题之前做错了一次，现在做又错了一次。呜呜呜  构造函数自己定义了后就不生产默认缺参的了  友元关系 1，不可传递  2，单向 3，不可继承  友元函数不是成员函数，但可以访问所以的成员  没毛病  静态成员直接写就好了，主要在类外初始化 常成员可以用列表初始化 只能在构造函数这用列表  常成员只能用常函数，但非常成员却可以调用常函数   用对象初始化时，调用复制构造函数与重载">
 <meta property="og:type" content="article">
-<meta property="og:title" content="C++学习笔记">
-<meta property="og:url" content="http://example.com/2022/05/16/%E5%AD%A6%E4%B9%A0%E7%AC%94%E8%AE%B0/c++%E9%94%99%E9%A2%98%E7%AC%94%E8%AE%B0%E4%B9%8B%E5%86%8D%E7%A0%94%E7%A9%B6/index.html">
+<meta property="og:title" content="c++错题集">
+<meta property="og:url" content="http://example.com/2022/05/16/%E5%AD%A6%E4%B9%A0%E7%AC%94%E8%AE%B0/c++%E9%94%99%E9%A2%98%E9%9B%86/index.html">
 <meta property="og:site_name" content="Topdog的博客">
-<meta property="og:description" content="前言：还得多练，我阿咔哥说得对，菜就多练。 学习通中错题集  这道题之前做错了一次，现在做又错了一次。呜呜呜  构造函数自己定义了后就不生产默认缺参的了  友元关系 1，不可传递  2，单向 3，不可继承  友元函数不是成员函数，但可以访问所以的成员  没毛病  静态成员直接写就好了，主要在类外初始化 常成员可以用列表初始化 只能在构造函数这用列表  常成员只能用常函数，但非常成员却可以调用常函数">
+<meta property="og:description" content="学习通中错题集  这道题之前做错了一次，现在做又错了一次。呜呜呜  构造函数自己定义了后就不生产默认缺参的了  友元关系 1，不可传递  2，单向 3，不可继承  友元函数不是成员函数，但可以访问所以的成员  没毛病  静态成员直接写就好了，主要在类外初始化 常成员可以用列表初始化 只能在构造函数这用列表  常成员只能用常函数，但非常成员却可以调用常函数   用对象初始化时，调用复制构造函数与重载">
 <meta property="og:locale" content="en_US">
 <meta property="og:image" content="https://test-1311941730.cos.ap-nanjing.myqcloud.com/image-20220516214307885.png">
 <meta property="og:image" content="https://test-1311941730.cos.ap-nanjing.myqcloud.com/image-20220516214326127.png">
@@ -34,10 +34,10 @@
 <meta property="og:image" content="https://test-1311941730.cos.ap-nanjing.myqcloud.com/image-20220516215906981.png">
 <meta property="og:image" content="https://test-1311941730.cos.ap-nanjing.myqcloud.com/image-20220516220043928.png">
 <meta property="og:image" content="https://test-1311941730.cos.ap-nanjing.myqcloud.com/image-20220516220325846.png">
-<meta property="article:published_time" content="2022-05-16T13:20:10.000Z">
-<meta property="article:modified_time" content="2022-05-16T14:06:58.275Z">
+<meta property="article:published_time" content="2022-05-16T11:20:10.000Z">
+<meta property="article:modified_time" content="2022-05-16T14:24:05.349Z">
 <meta property="article:author" content="雨后初霁">
-<meta property="article:tag" content="c++学习笔记">
+<meta property="article:tag" content="c++">
 <meta name="twitter:card" content="summary">
 <meta name="twitter:image" content="https://test-1311941730.cos.ap-nanjing.myqcloud.com/image-20220516214307885.png">
   
@@ -236,14 +236,14 @@
               class="anm-canvas"></canvas>
           </div>
           <div id="js-content" class="content-ll">
-            <article id="post-学习笔记/c++错题笔记之再研究" class="article article-type-post " itemscope itemprop="blogPost">
+            <article id="post-学习笔记/c++错题集" class="article article-type-post " itemscope itemprop="blogPost">
   <div class="article-inner">
     
       <header class="article-header">
   
   
     <h1 class="article-title" itemprop="name">
-      C++学习笔记
+      c++错题集
     </h1>
   
 
@@ -255,8 +255,8 @@
               <i class="icon-smile icon"></i> 阅读数：<span id="busuanzi_value_page_pv"></span>次
         </span>
 
-<a href="/2022/05/16/%E5%AD%A6%E4%B9%A0%E7%AC%94%E8%AE%B0/c++%E9%94%99%E9%A2%98%E7%AC%94%E8%AE%B0%E4%B9%8B%E5%86%8D%E7%A0%94%E7%A9%B6/" class="archive-article-date">
-        <time datetime="2022-05-16T13:20:10.000Z" itemprop="datePublished"><i class="icon-calendar icon"></i>2022-05-16</time>
+<a href="/2022/05/16/%E5%AD%A6%E4%B9%A0%E7%AC%94%E8%AE%B0/c++%E9%94%99%E9%A2%98%E9%9B%86/" class="archive-article-date">
+        <time datetime="2022-05-16T11:20:10.000Z" itemprop="datePublished"><i class="icon-calendar icon"></i>2022-05-16</time>
 </a>
 
   
@@ -269,7 +269,7 @@
       <!-- 百度字体平台:http://fontstore.baidu.com/static/editor/index.html -->
       <i class="icon-statistics"></i>
       <span class="post-meta-item-text"> 字数统计:</span>
-      <span class="post-count">357字</span>
+      <span class="post-count">340字</span>
     </span>
   </span>
 
@@ -289,8 +289,7 @@
   
   <div class="article-entry" itemprop="articleBody">
     
-    <p>前言：还得多练，我阿咔哥说得对，菜就多练。</p>
-<h1 id="学习通中错题集"><a href="#学习通中错题集" class="headerlink" title="学习通中错题集"></a>学习通中错题集</h1><p><img src="https://test-1311941730.cos.ap-nanjing.myqcloud.com/image-20220516214307885.png" alt="image-20220516214307885"></p>
+    <h1 id="学习通中错题集"><a href="#学习通中错题集" class="headerlink" title="学习通中错题集"></a>学习通中错题集</h1><p><img src="https://test-1311941730.cos.ap-nanjing.myqcloud.com/image-20220516214307885.png"></p>
 <p><img src="https://test-1311941730.cos.ap-nanjing.myqcloud.com/image-20220516214326127.png" alt="image-20220516214326127"></p>
 <p>这道题之前做错了一次，现在做又错了一次。呜呜呜</p>
 <p><img src="https://test-1311941730.cos.ap-nanjing.myqcloud.com/image-20220516214430909.png" alt="image-20220516214430909"></p>
@@ -343,7 +342,7 @@
         </li>
         <li>
           <strong>本文链接：</strong>
-          <a href="http://example.com/2022/05/16/学习笔记/c++错题笔记之再研究/" title="C++学习笔记" target="_blank">http://example.com/2022/05/16/学习笔记/c++错题笔记之再研究/</a>
+          <a href="http://example.com/2022/05/16/学习笔记/c++错题集/" title="c++错题集" target="_blank">http://example.com/2022/05/16/学习笔记/c++错题集/</a>
         </li>
         
         <li>
@@ -365,7 +364,7 @@
 		<ul class="article-tag-list">
 			 
         		<li class="article-tag-list-item">
-        			<a href="javascript:void(0)" class="js-tag article-tag-list-link color3">c++学习笔记</a>
+        			<a href="javascript:void(0)" class="js-tag article-tag-list-link color4">c++</a>
         		</li>
       		
 		</ul>
@@ -421,7 +420,7 @@
     <a class="close js-modal-close" href="javascript:;"><i class="icon icon-close"></i></a>
     <p>扫一扫，分享到微信</p>
     <div class="wx-qrcode">
-     <!-- <img src="//pan.baidu.com/share/qrcode?url=http://example.com/2022/05/16/%E5%AD%A6%E4%B9%A0%E7%AC%94%E8%AE%B0/c++%E9%94%99%E9%A2%98%E7%AC%94%E8%AE%B0%E4%B9%8B%E5%86%8D%E7%A0%94%E7%A9%B6/" alt="微信分享二维码"> -->
+     <!-- <img src="//pan.baidu.com/share/qrcode?url=http://example.com/2022/05/16/%E5%AD%A6%E4%B9%A0%E7%AC%94%E8%AE%B0/c++%E9%94%99%E9%A2%98%E9%9B%86/" alt="微信分享二维码"> -->
     </div>
 </div>
 
@@ -436,9 +435,18 @@
 
 <nav id="article-nav">
   
+    <a href="/2022/05/16/%E5%AD%A6%E4%B9%A0%E7%AC%94%E8%AE%B0/DFS%EF%BC%8CBFS/" id="article-nav-newer" class="article-nav-link-wrap">
+      <i class="icon-circle-left"></i>
+      <div class="article-nav-title">
+        
+          DFS BFS 在迷宫题中的运用
+        
+      </div>
+    </a>
   
-    <a href="/2022/05/16/%E5%AD%A6%E4%B9%A0%E7%AC%94%E8%AE%B0/2022-05-16-C++%E5%AD%A6%E4%B9%A0%E7%AC%94%E8%AE%B0/" id="article-nav-older" class="article-nav-link-wrap">
-      <div class="article-nav-title">C++复习笔记</div>
+  
+    <a href="/2022/05/16/%E9%80%86%E5%90%91/2022Sloth%E9%80%89%E6%8B%94%E8%B5%9B/" id="article-nav-older" class="article-nav-link-wrap">
+      <div class="article-nav-title">2022Sloth选拔赛</div>
       <i class="icon-circle-right"></i>
     </a>
   
@@ -621,10 +629,6 @@
           <ul class="article-tag-list" q-show="showTags">
              
               <li class="article-tag-list-item">
-                <a href="javascript:void(0)" class="js-tag color3">逆向</a>
-              </li>
-             
-              <li class="article-tag-list-item">
                 <a href="javascript:void(0)" class="js-tag color1">c++学习</a>
               </li>
              
@@ -633,7 +637,11 @@
               </li>
              
               <li class="article-tag-list-item">
-                <a href="javascript:void(0)" class="js-tag color3">c++学习笔记</a>
+                <a href="javascript:void(0)" class="js-tag color4">c++</a>
+              </li>
+             
+              <li class="article-tag-list-item">
+                <a href="javascript:void(0)" class="js-tag color3">逆向</a>
               </li>
             
             <div class="clearfix"></div>
