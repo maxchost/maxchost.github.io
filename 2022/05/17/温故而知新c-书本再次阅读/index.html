@@ -1,0 +1,330 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+<meta name="viewport" content="width=device-width">
+<meta name="theme-color" content="#222"><meta name="generator" content="Hexo 5.4.2">
+
+
+  <link rel="apple-touch-icon" sizes="180x180" href="/images/apple-touch-icon-next.png">
+  <link rel="icon" type="image/png" sizes="32x32" href="/images/favicon-32x32-next.png">
+  <link rel="icon" type="image/png" sizes="16x16" href="/images/favicon-16x16-next.png">
+  <link rel="mask-icon" href="/images/logo.svg" color="#222">
+
+<link rel="stylesheet" href="/css/main.css">
+
+
+
+<link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/@fortawesome/fontawesome-free@6.1.1/css/all.min.css" integrity="sha256-DfWjNxDkM94fVBWx1H5BMMp0Zq7luBlV8QRcSES7s+0=" crossorigin="anonymous">
+  <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/animate.css@3.1.1/animate.min.css" integrity="sha256-PR7ttpcvz8qrF57fur/yAx1qXMFJeJFiA6pSzWi0OIE=" crossorigin="anonymous">
+
+<script class="next-config" data-name="main" type="application/json">{"hostname":"example.com","root":"/","images":"/images","scheme":"Muse","darkmode":false,"version":"8.11.1","exturl":false,"sidebar":{"position":"left","display":"post","padding":18,"offset":12},"copycode":false,"bookmark":{"enable":false,"color":"#222","save":"auto"},"mediumzoom":false,"lazyload":false,"pangu":false,"comments":{"style":"tabs","active":null,"storage":true,"lazyload":false,"nav":null},"stickytabs":false,"motion":{"enable":true,"async":false,"transition":{"post_block":"fadeIn","post_header":"fadeInDown","post_body":"fadeInDown","coll_header":"fadeInLeft","sidebar":"fadeInUp"}},"prism":false,"i18n":{"placeholder":"Searching...","empty":"We didn't find any results for the search: ${query}","hits_time":"${hits} results found in ${time} ms","hits":"${hits} results found"}}</script><script src="/js/config.js"></script>
+
+    <meta name="description" content="前言：本篇是对c++的温故与知新。需要一定基础  goto的使用无论是c还是c++都对其讳莫如深，其实goto也有好用的地方，在多重循坏时，goto就可以轻松出来。但容易被黑客利用，使用goto到想要程序执行的地方 auto与decltypeauto 和 decltype 都是类型推断的方式 区别如下： 1、auto 是通过编译器计算变量的初始值来推断类型，decltype同样也是通过编译器来分析">
+<meta property="og:type" content="article">
+<meta property="og:title" content="温故而知新c++书本再次阅读">
+<meta property="og:url" content="http://example.com/2022/05/17/%E6%B8%A9%E6%95%85%E8%80%8C%E7%9F%A5%E6%96%B0c-%E4%B9%A6%E6%9C%AC%E5%86%8D%E6%AC%A1%E9%98%85%E8%AF%BB/index.html">
+<meta property="og:site_name" content="Topdog的博客">
+<meta property="og:description" content="前言：本篇是对c++的温故与知新。需要一定基础  goto的使用无论是c还是c++都对其讳莫如深，其实goto也有好用的地方，在多重循坏时，goto就可以轻松出来。但容易被黑客利用，使用goto到想要程序执行的地方 auto与decltypeauto 和 decltype 都是类型推断的方式 区别如下： 1、auto 是通过编译器计算变量的初始值来推断类型，decltype同样也是通过编译器来分析">
+<meta property="og:locale" content="en_US">
+<meta property="og:image" content="https://test-1311941730.cos.ap-nanjing.myqcloud.com/image-20220517161403539.png">
+<meta property="article:published_time" content="2022-05-17T07:35:01.000Z">
+<meta property="article:modified_time" content="2022-05-17T10:26:59.395Z">
+<meta property="article:author" content="雨后初霁">
+<meta property="article:tag" content="c++">
+<meta name="twitter:card" content="summary">
+<meta name="twitter:image" content="https://test-1311941730.cos.ap-nanjing.myqcloud.com/image-20220517161403539.png">
+
+
+<link rel="canonical" href="http://example.com/2022/05/17/%E6%B8%A9%E6%95%85%E8%80%8C%E7%9F%A5%E6%96%B0c-%E4%B9%A6%E6%9C%AC%E5%86%8D%E6%AC%A1%E9%98%85%E8%AF%BB/">
+
+
+
+<script class="next-config" data-name="page" type="application/json">{"sidebar":"","isHome":false,"isPost":true,"lang":"en","comments":true,"permalink":"http://example.com/2022/05/17/%E6%B8%A9%E6%95%85%E8%80%8C%E7%9F%A5%E6%96%B0c-%E4%B9%A6%E6%9C%AC%E5%86%8D%E6%AC%A1%E9%98%85%E8%AF%BB/","path":"2022/05/17/温故而知新c-书本再次阅读/","title":"温故而知新c++书本再次阅读"}</script>
+
+<script class="next-config" data-name="calendar" type="application/json">""</script>
+<title>温故而知新c++书本再次阅读 | Topdog的博客</title>
+  
+
+
+
+
+
+  <noscript>
+    <link rel="stylesheet" href="/css/noscript.css">
+  </noscript>
+</head>
+
+<body itemscope itemtype="http://schema.org/WebPage" class="use-motion">
+  <div class="headband"></div>
+
+  <main class="main">
+    <header class="header" itemscope itemtype="http://schema.org/WPHeader">
+      <div class="header-inner"><div class="site-brand-container">
+  <div class="site-nav-toggle">
+    <div class="toggle" aria-label="Toggle navigation bar" role="button">
+    </div>
+  </div>
+
+  <div class="site-meta">
+
+    <a href="/" class="brand" rel="start">
+      <i class="logo-line"></i>
+      <p class="site-title">Topdog的博客</p>
+      <i class="logo-line"></i>
+    </a>
+      <p class="site-subtitle" itemprop="description">心有猛虎，细嗅蔷薇!</p>
+  </div>
+
+  <div class="site-nav-right">
+    <div class="toggle popup-trigger">
+    </div>
+  </div>
+</div>
+
+
+
+
+
+
+
+</div>
+        
+  
+  <div class="toggle sidebar-toggle" role="button">
+    <span class="toggle-line"></span>
+    <span class="toggle-line"></span>
+    <span class="toggle-line"></span>
+  </div>
+
+  <aside class="sidebar">
+
+    <div class="sidebar-inner sidebar-nav-active sidebar-toc-active">
+      <ul class="sidebar-nav">
+        <li class="sidebar-nav-toc">
+          Table of Contents
+        </li>
+        <li class="sidebar-nav-overview">
+          Overview
+        </li>
+      </ul>
+
+      <div class="sidebar-panel-container">
+        <!--noindex-->
+        <div class="post-toc-wrap sidebar-panel">
+            <div class="post-toc animated"><ol class="nav"><li class="nav-item nav-level-1"><a class="nav-link" href="#goto%E7%9A%84%E4%BD%BF%E7%94%A8"><span class="nav-number">1.</span> <span class="nav-text">goto的使用</span></a></li><li class="nav-item nav-level-1"><a class="nav-link" href="#auto%E4%B8%8Edecltype"><span class="nav-number">2.</span> <span class="nav-text">auto与decltype</span></a></li><li class="nav-item nav-level-1"><a class="nav-link" href="#%E5%86%85%E8%81%94%E5%87%BD%E6%95%B0"><span class="nav-number">3.</span> <span class="nav-text">内联函数</span></a></li><li class="nav-item nav-level-1"><a class="nav-link" href="#%E5%87%BD%E6%95%B0%E9%87%8D%E8%BD%BD"><span class="nav-number">4.</span> <span class="nav-text">函数重载</span></a></li><li class="nav-item nav-level-1"><a class="nav-link" href="#%E5%87%BD%E6%95%B0%E5%A3%B0%E6%98%8E"><span class="nav-number">5.</span> <span class="nav-text">函数声明</span></a></li><li class="nav-item nav-level-1"><a class="nav-link" href="#%E6%9E%84%E9%80%A0%E4%B8%8E%E6%9E%90%E6%9E%84"><span class="nav-number">6.</span> <span class="nav-text">构造与析构</span></a></li></ol></div>
+        </div>
+        <!--/noindex-->
+
+        <div class="site-overview-wrap sidebar-panel">
+          <div class="site-author site-overview-item animated" itemprop="author" itemscope itemtype="http://schema.org/Person">
+  <p class="site-author-name" itemprop="name">雨后初霁</p>
+  <div class="site-description" itemprop="description"></div>
+</div>
+<div class="site-state-wrap site-overview-item animated">
+  <nav class="site-state">
+      <div class="site-state-item site-state-posts">
+        <a href="/archives/">
+          <span class="site-state-item-count">11</span>
+          <span class="site-state-item-name">posts</span>
+        </a>
+      </div>
+      <div class="site-state-item site-state-tags">
+        <span class="site-state-item-count">4</span>
+        <span class="site-state-item-name">tags</span>
+      </div>
+  </nav>
+</div>
+
+
+
+        </div>
+      </div>
+    </div>
+  </aside>
+  <div class="sidebar-dimmer"></div>
+
+
+    </header>
+
+    
+  <div class="back-to-top" role="button" aria-label="Back to top">
+    <i class="fa fa-arrow-up"></i>
+    <span>0%</span>
+  </div>
+
+<noscript>
+  <div class="noscript-warning">Theme NexT works best with JavaScript enabled</div>
+</noscript>
+
+
+    <div class="main-inner post posts-expand">
+
+
+  
+
+
+<div class="post-block">
+  
+  
+
+  <article itemscope itemtype="http://schema.org/Article" class="post-content" lang="en">
+    <link itemprop="mainEntityOfPage" href="http://example.com/2022/05/17/%E6%B8%A9%E6%95%85%E8%80%8C%E7%9F%A5%E6%96%B0c-%E4%B9%A6%E6%9C%AC%E5%86%8D%E6%AC%A1%E9%98%85%E8%AF%BB/">
+
+    <span hidden itemprop="author" itemscope itemtype="http://schema.org/Person">
+      <meta itemprop="image" content="/images/avatar.gif">
+      <meta itemprop="name" content="雨后初霁">
+    </span>
+
+    <span hidden itemprop="publisher" itemscope itemtype="http://schema.org/Organization">
+      <meta itemprop="name" content="Topdog的博客">
+      <meta itemprop="description" content="">
+    </span>
+
+    <span hidden itemprop="post" itemscope itemtype="http://schema.org/CreativeWork">
+      <meta itemprop="name" content="温故而知新c++书本再次阅读 | Topdog的博客">
+      <meta itemprop="description" content="">
+    </span>
+      <header class="post-header">
+        <h1 class="post-title" itemprop="name headline">
+          温故而知新c++书本再次阅读
+        </h1>
+
+        <div class="post-meta-container">
+          <div class="post-meta">
+    <span class="post-meta-item">
+      <span class="post-meta-item-icon">
+        <i class="far fa-calendar"></i>
+      </span>
+      <span class="post-meta-item-text">Posted on</span>
+      
+
+      <time title="Created: 2022-05-17 15:35:01 / Modified: 18:26:59" itemprop="dateCreated datePublished" datetime="2022-05-17T15:35:01+08:00">2022-05-17</time>
+    </span>
+
+  
+</div>
+
+        </div>
+      </header>
+
+    
+    
+    
+    <div class="post-body" itemprop="articleBody">
+        <p>前言：本篇是对c++的温故与知新。需要一定基础</p>
+<p><img src="https://test-1311941730.cos.ap-nanjing.myqcloud.com/image-20220517161403539.png" alt="image-20220517161403539"></p>
+<h1 id="goto的使用"><a href="#goto的使用" class="headerlink" title="goto的使用"></a>goto的使用</h1><p>无论是c还是c++都对其讳莫如深，其实goto也有好用的地方，在多重循坏时，goto就可以轻松出来。但容易被黑客利用，使用goto到想要程序执行的地方</p>
+<h1 id="auto与decltype"><a href="#auto与decltype" class="headerlink" title="auto与decltype"></a>auto与decltype</h1><p>auto 和 decltype 都是类型推断的方式</p>
+<p>区别如下：</p>
+<p>1、auto 是通过编译器计算变量的初始值来推断类型，decltype同样也是通过编译器来分析表达式进而得到它的类型，但是它不用将表达式的值计算出来</p>
+<p>2、编译器推断出来的auto类型可能与初始值类型不同，众多周知，使用引用实际是使用引用的对象，特别是当引用被用作初始值时，真正参与初始化的值其实是引用对象的值，此时编译器以引用对象的类型作为auto的类型，比如对于顶层const，auto会忽略顶层const性质，但是decltype是保留下来的</p>
+<figure class="highlight plaintext"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br></pre></td><td class="code"><pre><span class="line">auto 和 decltype 都是类型推断的方式</span><br><span class="line"></span><br><span class="line">区别如下：</span><br><span class="line"></span><br><span class="line">1、auto 是通过编译器计算变量的初始值来推断类型，decltype同样也是通过编译器来分析表达式进而得到它的类型，但是它不用将表达式的值计算出来</span><br><span class="line"></span><br><span class="line"> </span><br><span class="line"></span><br><span class="line">2、编译器推断出来的auto类型可能与初始值类型不同，众多周知，使用引用实际是使用引用的对象，特别是当引用被用作初始值时，真正参与初始化的值其实是引用对象的值，此时编译器以引用对象的类型作为auto的类型，比如对于顶层const，auto会忽略顶层const性质，但是decltype是保留下来的</span><br></pre></td></tr></table></figure>
+
+<figure class="highlight plaintext"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br></pre></td><td class="code"><pre><span class="line">cosnt int ci = 0, &amp;cj = ci;</span><br><span class="line">decltype(ci) x = 0;    //x的类型是const int</span><br><span class="line">deceltype(cj) y = x;     //y的类型是const int&amp;，y绑定到变量x</span><br><span class="line">decltype(cj) z;    //错误，z是一个引用，必须初始化</span><br></pre></td></tr></table></figure>
+
+<figure class="highlight plaintext"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br></pre></td><td class="code"><pre><span class="line">//引用从来都作为其所指对象的同义词出现，只有在decltype处是一个例外</span><br><span class="line"></span><br><span class="line">//decltype和引用</span><br><span class="line"></span><br><span class="line">//如果decltype使用的表达式不是一个变量，则decltype返回表达式结果对应的类型，decltype的返回值类型可以是引用类型</span><br><span class="line"></span><br><span class="line">int i =42，*p = &amp;i, &amp;r = i;</span><br><span class="line">decltype(r + 0) b;    //加法的结果时int,因此b是一个未初始化的int</span><br><span class="line">decltype(*p) c;     //错误做法：c是int&amp; 必须初始化</span><br><span class="line"></span><br><span class="line">//如果表达式的内容是解引用操作，则decltype将得到引用类型，解引用指针可以得到指针所指的对象，而且还能给这个对象赋值，因此decltype（*p）的结果类型就是int&amp;，而非int</span><br></pre></td></tr></table></figure>
+
+<h1 id="内联函数"><a href="#内联函数" class="headerlink" title="内联函数"></a>内联函数</h1><p>内联函数不是在调用处发生控制转移，而是在编译时将函数体嵌入在每一个调用处，节省参数传递，控制转移等开销。</p>
+<p>需要用 inline 说明</p>
+<p>没有inline说明的函数也可能是内联函数</p>
+<p>递归无法使用内联</p>
+<h1 id="函数重载"><a href="#函数重载" class="headerlink" title="函数重载"></a>函数重载</h1><p>两个以上的函数，具有相同的函数名，但是形参的个数或者类型不同，编译器根据形参的个数或者类型和个数的最佳匹配，自动确定调用 哪一个函数</p>
+<p>注意：编译器不以形参名和返回值来区分函数</p>
+<h1 id="函数声明"><a href="#函数声明" class="headerlink" title="函数声明"></a>函数声明</h1><p>调用一个函数前必须声明其原型，可以很好避免向一个函数传参不正确或类型不正确的参数。返回值同理。</p>
+<h1 id="构造与析构"><a href="#构造与析构" class="headerlink" title="构造与析构"></a>构造与析构</h1><p>有时派生内的构造函数体为空，但并非不做任何事情，它还要负责基类的构造和成员对象的构造</p>
+<ul>
+<li><p>构造作为成员函数，可以访问类的所有的数据成员，内联函数等</p>
+</li>
+<li><p>如果我们没有定义构造函数，那么编译器会自己定义一个缺省的构造</p>
+</li>
+</ul>
+<p>复制构造：本质是用一个以存在的对象，来初始化同类的新对象</p>
+<p>隐含构造的功能就是把每个数据成员复制到新建立的对象中</p>
+<p>下面是复制构造被调用3种情况</p>
+<ul>
+<li> 用类的一个对象去初始化该类的另一个对象</li>
+</ul>
+  <figure class="highlight plaintext"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br></pre></td><td class="code"><pre><span class="line">point a(1,2);</span><br><span class="line">point b(a); //初始化调用</span><br><span class="line">point c = a; //初始化调用</span><br></pre></td></tr></table></figure>
+
+<ul>
+<li><p>如果函数的形参是类的对象，调用函数时，进行形参和实参结合时。</p>
+<figure class="highlight plaintext"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br></pre></td><td class="code"><pre><span class="line">void f(point p)&#123;</span><br><span class="line">cout&lt;&lt;p.getx()&lt;&lt;endl;</span><br><span class="line">&#125;</span><br><span class="line">int main()&#123;</span><br><span class="line">point  a(1,2);</span><br><span class="line">f(a);//形参是类的对象，调用函数时调用复制构造</span><br><span class="line">return 0;</span><br><span class="line">&#125;</span><br></pre></td></tr></table></figure></li>
+<li><p>如果返回值是类的对象时</p>
+<figure class="highlight plaintext"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br></pre></td><td class="code"><pre><span class="line">point f()&#123;</span><br><span class="line">point a(1,2);</span><br><span class="line">return a; 返回值是类的对象时,调用复制构造</span><br><span class="line">&#125;</span><br><span class="line">int main()&#123;</span><br><span class="line">point  b;</span><br><span class="line">b=f();</span><br><span class="line">return 0;</span><br><span class="line">&#125;</span><br></pre></td></tr></table></figure></li>
+</ul>
+<p>析构函数不接受任何参数，在对象要被销毁时进行调用的</p>
+
+    </div>
+
+    
+    
+    
+
+    <footer class="post-footer">
+          <div class="post-tags">
+              <a href="/tags/c/" rel="tag"># c++</a>
+          </div>
+
+        
+
+          <div class="post-nav">
+            <div class="post-nav-item">
+                <a href="/2022/05/17/c-%E5%BE%80%E5%B9%B4%E8%AF%95%E5%8D%B7%E4%B8%8A%E7%9A%84%E9%97%AE%E9%A2%98%EF%BC%88%E5%80%BC%E5%BE%97%E4%B8%80%E7%9C%8B%EF%BC%89/" rel="prev" title="c++往年试卷上的问题（值得一看）">
+                  <i class="fa fa-chevron-left"></i> c++往年试卷上的问题（值得一看）
+                </a>
+            </div>
+            <div class="post-nav-item">
+                <a href="/2022/05/17/%E5%AF%9D%E5%AE%A4c-%E5%A4%A7%E8%AE%A8%E8%AE%BA%E7%9A%84%E9%97%AE%E9%A2%98/" rel="next" title="寝室c++大讨论的问题">
+                  寝室c++大讨论的问题 <i class="fa fa-chevron-right"></i>
+                </a>
+            </div>
+          </div>
+    </footer>
+  </article>
+</div>
+
+
+
+
+
+
+</div>
+  </main>
+
+  <footer class="footer">
+    <div class="footer-inner">
+
+
+<div class="copyright">
+  &copy; 
+  <span itemprop="copyrightYear">2022</span>
+  <span class="with-love">
+    <i class="fa fa-heart"></i>
+  </span>
+  <span class="author" itemprop="copyrightHolder">雨后初霁</span>
+</div>
+  <div class="powered-by">Powered by <a href="https://hexo.io/" rel="noopener" target="_blank">Hexo</a> & <a href="https://theme-next.js.org/muse/" rel="noopener" target="_blank">NexT.Muse</a>
+  </div>
+
+    </div>
+  </footer>
+
+  
+  <script src="https://cdn.jsdelivr.net/npm/animejs@3.2.1/lib/anime.min.js" integrity="sha256-XL2inqUJaslATFnHdJOi9GfQ60on8Wx1C2H8DYiN1xY=" crossorigin="anonymous"></script>
+<script src="/js/comments.js"></script><script src="/js/utils.js"></script><script src="/js/motion.js"></script><script src="/js/schemes/muse.js"></script><script src="/js/next-boot.js"></script>
+
+  
+
+
+
+
+
+  
+
+
+
+
+
+</body>
+</html>
