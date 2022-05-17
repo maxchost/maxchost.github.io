@@ -6,40 +6,28 @@
   <meta name="renderer" content="webkit">
   <meta http-equiv="X-UA-Compatible" content="IE=edge" >
   <link rel="dns-prefetch" href="http://example.com">
-  <title>c++错题集 | Topdog的博客</title>
+  <title>c++往年试卷上的问题（值得一看） | Topdog的博客</title>
   <meta name="generator" content="hexo-theme-yilia-plus">
   <meta name="viewport" content="width=device-width, initial-scale=1, maximum-scale=1">
   
-  <meta name="description" content="学习通中错题集  这道题之前做错了一次，现在做又错了一次。呜呜呜  构造函数自己定义了后就不生产默认缺参的了  友元关系 1，不可传递  2，单向 3，不可继承  友元函数不是成员函数，但可以访问所以的成员  没毛病  静态成员直接写就好了，主要在类外初始化 常成员可以用列表初始化 只能在构造函数这用列表  常成员只能用常函数，但非常成员却可以调用常函数   用对象初始化时，调用复制构造函数与重载">
+  <meta name="description" content="练习九 所有的class可以换成typename，而反过来则不行，说明typename范围更大 模版成员函数都是模版函数，无论有没有模版参数（虚拟类型参数）  练习十 析构函数未执行，因为抛出异常后，发生栈的解旋 多态问题编译时多态：模版，重载 运行时多态：虚函数，指针，引用  没看到是友元函数，呜呜  &#x2F; 必为双目运算，没仔细读题，错了，啊这。   C++题：关于动态存储分配，下列说法正确的是？">
 <meta property="og:type" content="article">
-<meta property="og:title" content="c++错题集">
-<meta property="og:url" content="http://example.com/2022/05/16/%E5%AD%A6%E4%B9%A0%E7%AC%94%E8%AE%B0/c++%E9%94%99%E9%A2%98%E9%9B%86/index.html">
+<meta property="og:title" content="c++往年试卷上的问题（值得一看）">
+<meta property="og:url" content="http://example.com/2022/05/17/c-%E5%BE%80%E5%B9%B4%E8%AF%95%E5%8D%B7%E4%B8%8A%E7%9A%84%E9%97%AE%E9%A2%98%EF%BC%88%E5%80%BC%E5%BE%97%E4%B8%80%E7%9C%8B%EF%BC%89/index.html">
 <meta property="og:site_name" content="Topdog的博客">
-<meta property="og:description" content="学习通中错题集  这道题之前做错了一次，现在做又错了一次。呜呜呜  构造函数自己定义了后就不生产默认缺参的了  友元关系 1，不可传递  2，单向 3，不可继承  友元函数不是成员函数，但可以访问所以的成员  没毛病  静态成员直接写就好了，主要在类外初始化 常成员可以用列表初始化 只能在构造函数这用列表  常成员只能用常函数，但非常成员却可以调用常函数   用对象初始化时，调用复制构造函数与重载">
+<meta property="og:description" content="练习九 所有的class可以换成typename，而反过来则不行，说明typename范围更大 模版成员函数都是模版函数，无论有没有模版参数（虚拟类型参数）  练习十 析构函数未执行，因为抛出异常后，发生栈的解旋 多态问题编译时多态：模版，重载 运行时多态：虚函数，指针，引用  没看到是友元函数，呜呜  &#x2F; 必为双目运算，没仔细读题，错了，啊这。   C++题：关于动态存储分配，下列说法正确的是？">
 <meta property="og:locale" content="en_US">
-<meta property="og:image" content="https://test-1311941730.cos.ap-nanjing.myqcloud.com/image-20220516214307885.png">
-<meta property="og:image" content="https://test-1311941730.cos.ap-nanjing.myqcloud.com/image-20220516214326127.png">
-<meta property="og:image" content="https://test-1311941730.cos.ap-nanjing.myqcloud.com/image-20220516214430909.png">
-<meta property="og:image" content="https://test-1311941730.cos.ap-nanjing.myqcloud.com/image-20220516214518805.png">
-<meta property="og:image" content="https://test-1311941730.cos.ap-nanjing.myqcloud.com/image-20220516214614509.png">
-<meta property="og:image" content="https://test-1311941730.cos.ap-nanjing.myqcloud.com/image-20220516214742344.png">
-<meta property="og:image" content="https://test-1311941730.cos.ap-nanjing.myqcloud.com/image-20220516214830118.png">
-<meta property="og:image" content="https://test-1311941730.cos.ap-nanjing.myqcloud.com/image-20220516214956622.png">
-<meta property="og:image" content="https://test-1311941730.cos.ap-nanjing.myqcloud.com/image-20220516215053502.png">
-<meta property="og:image" content="https://test-1311941730.cos.ap-nanjing.myqcloud.com/image-20220516215144582.png">
-<meta property="og:image" content="https://test-1311941730.cos.ap-nanjing.myqcloud.com/image-20220516215337517.png">
-<meta property="og:image" content="https://test-1311941730.cos.ap-nanjing.myqcloud.com/image-20220516215603838.png">
-<meta property="og:image" content="https://test-1311941730.cos.ap-nanjing.myqcloud.com/image-20220516215654454.png">
-<meta property="og:image" content="https://test-1311941730.cos.ap-nanjing.myqcloud.com/image-20220516215753517.png">
-<meta property="og:image" content="https://test-1311941730.cos.ap-nanjing.myqcloud.com/image-20220516215906981.png">
-<meta property="og:image" content="https://test-1311941730.cos.ap-nanjing.myqcloud.com/image-20220516220043928.png">
-<meta property="og:image" content="https://test-1311941730.cos.ap-nanjing.myqcloud.com/image-20220516220325846.png">
-<meta property="article:published_time" content="2022-05-16T11:20:10.000Z">
-<meta property="article:modified_time" content="2022-05-16T14:24:05.349Z">
+<meta property="og:image" content="https://test-1311941730.cos.ap-nanjing.myqcloud.com/image-20220517143835788.png">
+<meta property="og:image" content="https://test-1311941730.cos.ap-nanjing.myqcloud.com/image-20220517144337343.png">
+<meta property="og:image" content="https://test-1311941730.cos.ap-nanjing.myqcloud.com/image-20220517144427839.png">
+<meta property="og:image" content="https://test-1311941730.cos.ap-nanjing.myqcloud.com/image-20220517144931379.png">
+<meta property="og:image" content="https://test-1311941730.cos.ap-nanjing.myqcloud.com/image-20220517145225760.png">
+<meta property="article:published_time" content="2022-05-17T06:27:49.000Z">
+<meta property="article:modified_time" content="2022-05-17T07:26:28.593Z">
 <meta property="article:author" content="雨后初霁">
 <meta property="article:tag" content="c++">
 <meta name="twitter:card" content="summary">
-<meta name="twitter:image" content="https://test-1311941730.cos.ap-nanjing.myqcloud.com/image-20220516214307885.png">
+<meta name="twitter:image" content="https://test-1311941730.cos.ap-nanjing.myqcloud.com/image-20220517143835788.png">
   
     <link rel="alternative" href="/atom.xml" title="Topdog的博客" type="application/atom+xml">
   
@@ -236,14 +224,14 @@
               class="anm-canvas"></canvas>
           </div>
           <div id="js-content" class="content-ll">
-            <article id="post-学习笔记/c++错题集" class="article article-type-post " itemscope itemprop="blogPost">
+            <article id="post-c-往年试卷上的问题（值得一看）" class="article article-type-post " itemscope itemprop="blogPost">
   <div class="article-inner">
     
       <header class="article-header">
   
   
     <h1 class="article-title" itemprop="name">
-      c++错题集
+      c++往年试卷上的问题（值得一看）
     </h1>
   
 
@@ -255,8 +243,8 @@
               <i class="icon-smile icon"></i> 阅读数：<span id="busuanzi_value_page_pv"></span>次
         </span>
 
-<a href="/2022/05/16/%E5%AD%A6%E4%B9%A0%E7%AC%94%E8%AE%B0/c++%E9%94%99%E9%A2%98%E9%9B%86/" class="archive-article-date">
-        <time datetime="2022-05-16T11:20:10.000Z" itemprop="datePublished"><i class="icon-calendar icon"></i>2022-05-16</time>
+<a href="/2022/05/17/c-%E5%BE%80%E5%B9%B4%E8%AF%95%E5%8D%B7%E4%B8%8A%E7%9A%84%E9%97%AE%E9%A2%98%EF%BC%88%E5%80%BC%E5%BE%97%E4%B8%80%E7%9C%8B%EF%BC%89/" class="archive-article-date">
+        <time datetime="2022-05-17T06:27:49.000Z" itemprop="datePublished"><i class="icon-calendar icon"></i>2022-05-17</time>
 </a>
 
   
@@ -269,7 +257,7 @@
       <!-- 百度字体平台:http://fontstore.baidu.com/static/editor/index.html -->
       <i class="icon-statistics"></i>
       <span class="post-meta-item-text"> 字数统计:</span>
-      <span class="post-count">340字</span>
+      <span class="post-count">347字</span>
     </span>
   </span>
 
@@ -289,45 +277,22 @@
   
   <div class="article-entry" itemprop="articleBody">
     
-    <h1 id="学习通中错题集"><a href="#学习通中错题集" class="headerlink" title="学习通中错题集"></a>学习通中错题集</h1><p><img src="https://test-1311941730.cos.ap-nanjing.myqcloud.com/image-20220516214307885.png"></p>
-<p><img src="https://test-1311941730.cos.ap-nanjing.myqcloud.com/image-20220516214326127.png" alt="image-20220516214326127"></p>
-<p>这道题之前做错了一次，现在做又错了一次。呜呜呜</p>
-<p><img src="https://test-1311941730.cos.ap-nanjing.myqcloud.com/image-20220516214430909.png" alt="image-20220516214430909"></p>
-<p>构造函数自己定义了后就不生产默认缺参的了</p>
-<p><img src="https://test-1311941730.cos.ap-nanjing.myqcloud.com/image-20220516214518805.png" alt="image-20220516214518805"></p>
-<p>友元关系 1，不可传递  2，单向 3，不可继承</p>
-<p><img src="https://test-1311941730.cos.ap-nanjing.myqcloud.com/image-20220516214614509.png" alt="image-20220516214614509"></p>
-<p>友元函数不是成员函数，但可以访问所以的成员</p>
-<p><img src="https://test-1311941730.cos.ap-nanjing.myqcloud.com/image-20220516214742344.png" alt="image-20220516214742344"></p>
-<p>没毛病</p>
-<p><img src="https://test-1311941730.cos.ap-nanjing.myqcloud.com/image-20220516214830118.png" alt="image-20220516214830118"></p>
-<p>静态成员直接写就好了，主要在类外初始化</p>
-<p>常成员可以用列表初始化</p>
-<p>只能在构造函数这用列表</p>
-<p><img src="https://test-1311941730.cos.ap-nanjing.myqcloud.com/image-20220516214956622.png" alt="image-20220516214956622"></p>
-<p>常成员只能用常函数，但非常成员却可以调用常函数</p>
-<p><img src="https://test-1311941730.cos.ap-nanjing.myqcloud.com/image-20220516215053502.png" alt="image-20220516215053502"></p>
-<p><img src="https://test-1311941730.cos.ap-nanjing.myqcloud.com/image-20220516215144582.png" alt="image-20220516215144582"></p>
-<p>用对象初始化时，调用复制构造函数与重载=无关。</p>
-<p>顺便一提，重载=只能为类成员函数</p>
-<p><img src="https://test-1311941730.cos.ap-nanjing.myqcloud.com/image-20220516215337517.png" alt="image-20220516215337517"></p>
-<p>左边基类 = 右边 派生类 符合这个格式就可以</p>
-<p>返回值是基类，故最后派生类要转化成基类，c正确</p>
-<p>而d，把派生类等于基类，错误</p>
-<p><img src="https://test-1311941730.cos.ap-nanjing.myqcloud.com/image-20220516215603838.png" alt="image-20220516215603838"></p>
-<p>保护继承不能直接访问</p>
-<p><img src="https://test-1311941730.cos.ap-nanjing.myqcloud.com/image-20220516215654454.png" alt="image-20220516215654454"></p>
-<p><img src="https://test-1311941730.cos.ap-nanjing.myqcloud.com/image-20220516215753517.png" alt="image-20220516215753517"></p>
-<p>– 不用int</p>
-<p><img src="https://test-1311941730.cos.ap-nanjing.myqcloud.com/image-20220516215906981.png" alt="image-20220516215906981"></p>
-<p>这个要说一下 要在类中定义 ，无需参数，无需返回值，故D错误</p>
-<p><img src="https://test-1311941730.cos.ap-nanjing.myqcloud.com/image-20220516220043928.png" alt="image-20220516220043928"></p>
-<p>由于基类是虚函数</p>
-<p>继承到派生类，如果有相同的函数会覆盖。故调用的全是派生类的。</p>
-<p><img src="https://test-1311941730.cos.ap-nanjing.myqcloud.com/image-20220516220325846.png" alt="image-20220516220325846"></p>
-<p>B *p=&amp;obj</p>
-<p>同理，有虚函数，有虚函数的则用派生类的，没有的则用基类的</p>
-<p>故为DB</p>
+    <h1 id=""><a href="#" class="headerlink" title=""></a></h1><h1 id="练习九"><a href="#练习九" class="headerlink" title="练习九"></a>练习九</h1><ul>
+<li>所有的class可以换成typename，而反过来则不行，说明typename范围更大</li>
+<li>模版成员函数都是模版函数，无论有没有模版参数（虚拟类型参数）</li>
+</ul>
+<h1 id="练习十"><a href="#练习十" class="headerlink" title="练习十"></a>练习十</h1><p><img src="https://test-1311941730.cos.ap-nanjing.myqcloud.com/image-20220517143835788.png" alt="image-20220517143835788"></p>
+<p>析构函数未执行，因为抛出异常后，发生栈的解旋</p>
+<h2 id="多态问题"><a href="#多态问题" class="headerlink" title="多态问题"></a>多态问题</h2><p>编译时多态：模版，重载</p>
+<p>运行时多态：虚函数，指针，引用</p>
+<p><img src="https://test-1311941730.cos.ap-nanjing.myqcloud.com/image-20220517144337343.png" alt="image-20220517144337343"></p>
+<p>没看到是友元函数，呜呜</p>
+<p><img src="https://test-1311941730.cos.ap-nanjing.myqcloud.com/image-20220517144427839.png" alt="image-20220517144427839"></p>
+<p>/ 必为双目运算，没仔细读题，错了，啊这。</p>
+<p><img src="https://test-1311941730.cos.ap-nanjing.myqcloud.com/image-20220517144931379.png" alt="image-20220517144931379"></p>
+<p><img src="https://test-1311941730.cos.ap-nanjing.myqcloud.com/image-20220517145225760.png" alt="image-20220517145225760"></p>
+<h1 id="C-题：关于动态存储分配，下列说法正确的是？"><a href="#C-题：关于动态存储分配，下列说法正确的是？" class="headerlink" title="C++题：关于动态存储分配，下列说法正确的是？"></a>C++题：关于动态存储分配，下列说法正确的是？</h1><p>A、new和delete是C++语言中专门用于动态内存分配和释放的函数<br>B、动态分配的内存空间也可以被初始化<br>C、当系统内存不够时，会自动回收不再使用的内存单元，因此程序中不必用delete释放内存空间<br>D、当动态分配内存失败时，系统会立刻崩溃，因此一定要慎用new</p>
+<p>选项A，错，new 与delete是用于动态平衡分配与释放空间的运算符，不是函数<br>选项B，对，如int *p=new int(5);<br>选项C，错，要使用delete释放空间，系统会统一管理，而不用delete释放的空间，会造成内存泄漏，这种程序用的次数多，会造成内存耗尽<br>选项D，错，不成功，会返回0。</p>
 
     
 
@@ -342,7 +307,7 @@
         </li>
         <li>
           <strong>本文链接：</strong>
-          <a href="http://example.com/2022/05/16/学习笔记/c++错题集/" title="c++错题集" target="_blank">http://example.com/2022/05/16/学习笔记/c++错题集/</a>
+          <a href="http://example.com/2022/05/17/c-往年试卷上的问题（值得一看）/" title="c++往年试卷上的问题（值得一看）" target="_blank">http://example.com/2022/05/17/c-往年试卷上的问题（值得一看）/</a>
         </li>
         
         <li>
@@ -420,7 +385,7 @@
     <a class="close js-modal-close" href="javascript:;"><i class="icon icon-close"></i></a>
     <p>扫一扫，分享到微信</p>
     <div class="wx-qrcode">
-     <!-- <img src="//pan.baidu.com/share/qrcode?url=http://example.com/2022/05/16/%E5%AD%A6%E4%B9%A0%E7%AC%94%E8%AE%B0/c++%E9%94%99%E9%A2%98%E9%9B%86/" alt="微信分享二维码"> -->
+     <!-- <img src="//pan.baidu.com/share/qrcode?url=http://example.com/2022/05/17/c-%E5%BE%80%E5%B9%B4%E8%AF%95%E5%8D%B7%E4%B8%8A%E7%9A%84%E9%97%AE%E9%A2%98%EF%BC%88%E5%80%BC%E5%BE%97%E4%B8%80%E7%9C%8B%EF%BC%89/" alt="微信分享二维码"> -->
     </div>
 </div>
 
@@ -435,18 +400,9 @@
 
 <nav id="article-nav">
   
-    <a href="/2022/05/16/%E5%AD%A6%E4%B9%A0%E7%AC%94%E8%AE%B0/DFS%EF%BC%8CBFS/" id="article-nav-newer" class="article-nav-link-wrap">
-      <i class="icon-circle-left"></i>
-      <div class="article-nav-title">
-        
-          DFS BFS 在迷宫题中的运用
-        
-      </div>
-    </a>
   
-  
-    <a href="/2022/05/16/%E9%80%86%E5%90%91/2022Sloth%E9%80%89%E6%8B%94%E8%B5%9B/" id="article-nav-older" class="article-nav-link-wrap">
-      <div class="article-nav-title">2022Sloth选拔赛</div>
+    <a href="/2022/05/16/%E5%AD%A6%E4%B9%A0%E7%AC%94%E8%AE%B0/c-%E9%94%99%E9%A2%98%E9%9B%862/" id="article-nav-older" class="article-nav-link-wrap">
+      <div class="article-nav-title">c++错题2</div>
       <i class="icon-circle-right"></i>
     </a>
   
