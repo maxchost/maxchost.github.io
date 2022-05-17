@@ -1,306 +1,831 @@
-<!DOCTYPE html><html lang="zh-CN" data-theme="light"><head><meta charset="UTF-8"><meta http-equiv="X-UA-Compatible" content="IE=edge"><meta name="viewport" content="width=device-width, initial-scale=1.0, maximum-scale=1.0, user-scalable=no"><title>Topdog的博客 - 心有猛虎，细嗅蔷薇!</title><meta name="author" content="雨后初霁"><meta name="copyright" content="雨后初霁"><meta name="format-detection" content="telephone=no"><meta name="theme-color" content="#ffffff"><meta property="og:type" content="website">
+<!DOCTYPE html>
+<html lang=zh>
+<head>
+  <meta charset="utf-8">
+  
+  <meta http-equiv="X-UA-Compatible" content="IE=edge,chrome=1">
+  <meta name="viewport" content="width=device-width, initial-scale=1, maximum-scale=1, minimum-scale=1, user-scalable=no, minimal-ui">
+  <meta name="renderer" content="webkit">
+  <meta http-equiv="Cache-Control" content="no-transform" />
+  <meta http-equiv="Cache-Control" content="no-siteapp" />
+  <meta name="apple-mobile-web-app-capable" content="yes">
+  <meta name="apple-mobile-web-app-status-bar-style" content="black">
+  <meta name="format-detection" content="telephone=no,email=no,adress=no">
+  <!-- Color theme for statusbar -->
+  <meta name="theme-color" content="#000000" />
+  <!-- 强制页面在当前窗口以独立页面显示,防止别人在框架里调用页面 -->
+  <meta http-equiv="window-target" content="_top" />
+  
+  
+  <title>Hexo</title>
+  <meta property="og:type" content="website">
 <meta property="og:title" content="Topdog的博客">
 <meta property="og:url" content="http://example.com/index.html">
 <meta property="og:site_name" content="Topdog的博客">
 <meta property="og:locale" content="zh_CN">
-<meta property="og:image" content="https://i.loli.net/2021/02/24/5O1day2nriDzjSu.png">
 <meta property="article:author" content="雨后初霁">
 <meta name="twitter:card" content="summary">
-<meta name="twitter:image" content="https://i.loli.net/2021/02/24/5O1day2nriDzjSu.png"><link rel="shortcut icon" href="/img/favicon.png"><link rel="canonical" href="http://example.com/"><link rel="preconnect" href="//cdn.jsdelivr.net"/><link rel="preconnect" href="//busuanzi.ibruce.info"/><link rel="stylesheet" href="/css/index.css"><link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/@fortawesome/fontawesome-free@6/css/all.min.css" media="print" onload="this.media='all'"><link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/@fancyapps/ui/dist/fancybox.css" media="print" onload="this.media='all'"><script>const GLOBAL_CONFIG = { 
-  root: '/',
-  algolia: undefined,
-  localSearch: undefined,
-  translate: undefined,
-  noticeOutdate: undefined,
-  highlight: {"plugin":"highlighjs","highlightCopy":true,"highlightLang":true,"highlightHeightLimit":false},
-  copy: {
-    success: '复制成功',
-    error: '复制错误',
-    noSupport: '浏览器不支持'
-  },
-  relativeDate: {
-    homepage: false,
-    post: false
-  },
-  runtime: '',
-  date_suffix: {
-    just: '刚刚',
-    min: '分钟前',
-    hour: '小时前',
-    day: '天前',
-    month: '个月前'
-  },
-  copyright: undefined,
-  lightbox: 'fancybox',
-  Snackbar: undefined,
-  source: {
-    justifiedGallery: {
-      js: 'https://cdn.jsdelivr.net/npm/flickr-justified-gallery@2/dist/fjGallery.min.js',
-      css: 'https://cdn.jsdelivr.net/npm/flickr-justified-gallery@2/dist/fjGallery.min.css'
-    }
-  },
-  isPhotoFigcaption: false,
-  islazyload: false,
-  isAnchor: false
-}</script><script id="config-diff">var GLOBAL_CONFIG_SITE = {
-  title: 'Topdog的博客',
-  isPost: false,
-  isHome: true,
-  isHighlightShrink: true,
-  isToc: false,
-  postUpdate: '2022-05-17 20:29:00'
-}</script><noscript><style type="text/css">
-  #nav {
-    opacity: 1
-  }
-  .justified-gallery img {
-    opacity: 1
-  }
-
-  #recent-posts time,
-  #post-meta time {
-    display: inline !important
-  }
-</style></noscript><script>(win=>{
-    win.saveToLocal = {
-      set: function setWithExpiry(key, value, ttl) {
-        if (ttl === 0) return
-        const now = new Date()
-        const expiryDay = ttl * 86400000
-        const item = {
-          value: value,
-          expiry: now.getTime() + expiryDay,
-        }
-        localStorage.setItem(key, JSON.stringify(item))
-      },
-
-      get: function getWithExpiry(key) {
-        const itemStr = localStorage.getItem(key)
-
-        if (!itemStr) {
-          return undefined
-        }
-        const item = JSON.parse(itemStr)
-        const now = new Date()
-
-        if (now.getTime() > item.expiry) {
-          localStorage.removeItem(key)
-          return undefined
-        }
-        return item.value
-      }
-    }
+  <!-- Canonical links -->
+  <link rel="canonical" href="http://example.com/index.html">
   
-    win.getScript = url => new Promise((resolve, reject) => {
-      const script = document.createElement('script')
-      script.src = url
-      script.async = true
-      script.onerror = reject
-      script.onload = script.onreadystatechange = function() {
-        const loadState = this.readyState
-        if (loadState && loadState !== 'loaded' && loadState !== 'complete') return
-        script.onload = script.onreadystatechange = null
-        resolve()
-      }
-      document.head.appendChild(script)
-    })
+    <link rel="alternate" href="/atom.xml" title="Topdog的博客" type="application/atom+xml">
   
-      win.activateDarkMode = function () {
-        document.documentElement.setAttribute('data-theme', 'dark')
-        if (document.querySelector('meta[name="theme-color"]') !== null) {
-          document.querySelector('meta[name="theme-color"]').setAttribute('content', '#0d0d0d')
-        }
-      }
-      win.activateLightMode = function () {
-        document.documentElement.setAttribute('data-theme', 'light')
-        if (document.querySelector('meta[name="theme-color"]') !== null) {
-          document.querySelector('meta[name="theme-color"]').setAttribute('content', '#ffffff')
-        }
-      }
-      const t = saveToLocal.get('theme')
-    
-          if (t === 'dark') activateDarkMode()
-          else if (t === 'light') activateLightMode()
+  
+    <link rel="icon" href="/favicon.png" type="image/x-icon">
+  
+  
+<link rel="stylesheet" href="/css/style.css">
+
+  
+  
+  
+  
+<meta name="generator" content="Hexo 5.4.2"></head>
+
+
+<body class="main-center" itemscope itemtype="http://schema.org/WebPage">
+  <header class="header" itemscope itemtype="http://schema.org/WPHeader">
+  <div class="slimContent">
+    <div class="navbar-header">
+      
+      
+      <div class="profile-block text-center">
+        <a id="avatar" href="https://github.com/maxchost?tab=repositories" target="_blank">
+          <img class="img-circle img-rotate" src="https://test-1311941730.cos.ap-nanjing.myqcloud.com/@){U79_SH1QT}Y`MVG~0_E3.jpg" width="200" height="200">
+        </a>
+        <h2 id="name" class="hidden-xs hidden-sm">雨后初霁</h2>
+        <h3 id="title" class="hidden-xs hidden-sm hidden-md">心有猛虎，细嗅蔷薇。</h3>
+        <small id="location" class="text-muted hidden-xs hidden-sm"><i class="icon icon-map-marker"></i> WuHan, China</small>
+      </div>
+      
+      <div class="search" id="search-form-wrap">
+
+    <form class="search-form sidebar-form">
+        <div class="input-group">
+            <input type="text" class="search-form-input form-control" placeholder="搜索" />
+            <span class="input-group-btn">
+                <button type="submit" class="search-form-submit btn btn-flat" onclick="return false;"><i class="icon icon-search"></i></button>
+            </span>
+        </div>
+    </form>
+    <div class="ins-search">
+  <div class="ins-search-mask"></div>
+  <div class="ins-search-container">
+    <div class="ins-input-wrapper">
+      <input type="text" class="ins-search-input" placeholder="想要查找什么..." x-webkit-speech />
+      <button type="button" class="close ins-close ins-selectable" data-dismiss="modal" aria-label="Close"><span aria-hidden="true">×</span></button>
+    </div>
+    <div class="ins-section-wrapper">
+      <div class="ins-section-container"></div>
+    </div>
+  </div>
+</div>
+
+
+</div>
+      <button class="navbar-toggle collapsed" type="button" data-toggle="collapse" data-target="#main-navbar" aria-controls="main-navbar" aria-expanded="false">
+        <span class="sr-only">Toggle navigation</span>
+        <span class="icon-bar"></span>
+        <span class="icon-bar"></span>
+        <span class="icon-bar"></span>
+      </button>
+    </div>
+    <nav id="main-navbar" class="collapse navbar-collapse" itemscope itemtype="http://schema.org/SiteNavigationElement" role="navigation">
+      <ul class="nav navbar-nav main-nav ">
         
-      const asideStatus = saveToLocal.get('aside-status')
-      if (asideStatus !== undefined) {
-        if (asideStatus === 'hide') {
-          document.documentElement.classList.add('hide-aside')
-        } else {
-          document.documentElement.classList.remove('hide-aside')
-        }
-      }
+        
+        <li class="menu-item menu-item-home">
+          <a href="/.">
+            
+            <i class="icon icon-home-fill"></i>
+            
+            <span class="menu-title">首页</span>
+          </a>
+        </li>
+        
+        
+        <li class="menu-item menu-item-archives">
+          <a href="/archives">
+            
+            <i class="icon icon-archives-fill"></i>
+            
+            <span class="menu-title">归档</span>
+          </a>
+        </li>
+        
+        
+        <li class="menu-item menu-item-categories">
+          <a href="/categories">
+            
+            <i class="icon icon-folder"></i>
+            
+            <span class="menu-title">分类</span>
+          </a>
+        </li>
+        
+        
+        <li class="menu-item menu-item-tags">
+          <a href="/tags">
+            
+            <i class="icon icon-tags"></i>
+            
+            <span class="menu-title">标签</span>
+          </a>
+        </li>
+        
+        
+        <li class="menu-item menu-item-repository">
+          <a href="/repository">
+            
+            <i class="icon icon-project"></i>
+            
+            <span class="menu-title">项目</span>
+          </a>
+        </li>
+        
+        
+        <li class="menu-item menu-item-books">
+          <a href="/books">
+            
+            <i class="icon icon-book-fill"></i>
+            
+            <span class="menu-title">书单</span>
+          </a>
+        </li>
+        
+        
+        <li class="menu-item menu-item-links">
+          <a href="/links">
+            
+            <i class="icon icon-friendship"></i>
+            
+            <span class="menu-title">友链</span>
+          </a>
+        </li>
+        
+        
+        <li class="menu-item menu-item-about">
+          <a href="/about">
+            
+            <i class="icon icon-cup-fill"></i>
+            
+            <span class="menu-title">关于</span>
+          </a>
+        </li>
+        
+      </ul>
+      
+	
+    <ul class="social-links">
+    	
+        <li><a href="https://github.com/cofess" target="_blank" title="Github" data-toggle=tooltip data-placement=top><i class="icon icon-github"></i></a></li>
+        
+        <li><a href="http://weibo.com/cofess" target="_blank" title="Weibo" data-toggle=tooltip data-placement=top><i class="icon icon-weibo"></i></a></li>
+        
+        <li><a href="https://twitter.com/iwebued" target="_blank" title="Twitter" data-toggle=tooltip data-placement=top><i class="icon icon-twitter"></i></a></li>
+        
+        <li><a href="https://www.behance.net/cofess" target="_blank" title="Behance" data-toggle=tooltip data-placement=top><i class="icon icon-behance"></i></a></li>
+        
+        <li><a href="/atom.xml" target="_blank" title="Rss" data-toggle=tooltip data-placement=top><i class="icon icon-rss"></i></a></li>
+        
+    </ul>
+
+    </nav>
+  </div>
+</header>
+
+  
+    <aside class="sidebar" itemscope itemtype="http://schema.org/WPSideBar">
+  <div class="slimContent">
     
-    const detectApple = () => {
-      if(/iPad|iPhone|iPod|Macintosh/.test(navigator.userAgent)){
-        document.documentElement.classList.add('apple')
-      }
-    }
-    detectApple()
-    })(window)</script><meta name="generator" content="Hexo 5.4.2"></head><body><div id="sidebar"><div id="menu-mask"></div><div id="sidebar-menus"><div class="avatar-img is-center"><img src="https://i.loli.net/2021/02/24/5O1day2nriDzjSu.png" onerror="onerror=null;src='/img/friend_404.gif'" alt="avatar"/></div><div class="sidebar-site-data site-data is-center"><a href="/archives/"><div class="headline">文章</div><div class="length-num">11</div></a><a href="/tags/"><div class="headline">标签</div><div class="length-num">4</div></a><a href="/categories/"><div class="headline">分类</div><div class="length-num">0</div></a></div><hr/><div class="menus_items"><div class="menus_item"><a class="site-page" href="/"><i class="fa-fw fas fa-home"></i><span> Home</span></a></div><div class="menus_item"><a class="site-page" href="/archives/"><i class="fa-fw fas fa-archive"></i><span> Archives</span></a></div><div class="menus_item"><a class="site-page" href="/tags/"><i class="fa-fw fas fa-tags"></i><span> Tags</span></a></div><div class="menus_item"><a class="site-page" href="/categories/"><i class="fa-fw fas fa-folder-open"></i><span> Categories</span></a></div><div class="menus_item"><a class="site-page group" href="javascript:void(0);"><i class="fa-fw fas fa-list"></i><span> List</span><i class="fas fa-chevron-down"></i></a><ul class="menus_item_child"><li><a class="site-page child" href="/music/"><i class="fa-fw fas fa-music"></i><span> Music</span></a></li><li><a class="site-page child" href="/movies/"><i class="fa-fw fas fa-video"></i><span> Movie</span></a></li></ul></div><div class="menus_item"><a class="site-page" href="/link/"><i class="fa-fw fas fa-link"></i><span> Link</span></a></div><div class="menus_item"><a class="site-page" href="/about/"><i class="fa-fw fas fa-heart"></i><span> About</span></a></div></div></div></div><div class="page" id="body-wrap"><header class="full_page" id="page-header"><nav id="nav"><span id="blog_name"><a id="site-name" href="/">Topdog的博客</a></span><div id="menus"><div class="menus_items"><div class="menus_item"><a class="site-page" href="/"><i class="fa-fw fas fa-home"></i><span> Home</span></a></div><div class="menus_item"><a class="site-page" href="/archives/"><i class="fa-fw fas fa-archive"></i><span> Archives</span></a></div><div class="menus_item"><a class="site-page" href="/tags/"><i class="fa-fw fas fa-tags"></i><span> Tags</span></a></div><div class="menus_item"><a class="site-page" href="/categories/"><i class="fa-fw fas fa-folder-open"></i><span> Categories</span></a></div><div class="menus_item"><a class="site-page group" href="javascript:void(0);"><i class="fa-fw fas fa-list"></i><span> List</span><i class="fas fa-chevron-down"></i></a><ul class="menus_item_child"><li><a class="site-page child" href="/music/"><i class="fa-fw fas fa-music"></i><span> Music</span></a></li><li><a class="site-page child" href="/movies/"><i class="fa-fw fas fa-video"></i><span> Movie</span></a></li></ul></div><div class="menus_item"><a class="site-page" href="/link/"><i class="fa-fw fas fa-link"></i><span> Link</span></a></div><div class="menus_item"><a class="site-page" href="/about/"><i class="fa-fw fas fa-heart"></i><span> About</span></a></div></div><div id="toggle-menu"><a class="site-page"><i class="fas fa-bars fa-fw"></i></a></div></div></nav><div id="site-info"><h1 id="site-title">Topdog的博客</h1></div><div id="scroll-down"><i class="fas fa-angle-down scroll-down-effects"></i></div></header><main class="layout" id="content-inner"><div class="recent-posts" id="recent-posts"><div class="recent-post-item"><div class="post_cover left"><a href="/2022/05/17/%E5%AF%9D%E5%AE%A4c-%E5%A4%A7%E8%AE%A8%E8%AE%BA%E7%9A%84%E9%97%AE%E9%A2%98/" title="寝室c++大讨论的问题"><img class="post_bg" src="data:image/gif;base64,R0lGODlhAQABAIAAAAAAAP///yH5BAEAAAAALAAAAAABAAEAAAIBRAA7" onerror="this.onerror=null;this.src='/img/404.jpg'" alt="寝室c++大讨论的问题"></a></div><div class="recent-post-info"><a class="article-title" href="/2022/05/17/%E5%AF%9D%E5%AE%A4c-%E5%A4%A7%E8%AE%A8%E8%AE%BA%E7%9A%84%E9%97%AE%E9%A2%98/" title="寝室c++大讨论的问题">寝室c++大讨论的问题</a><div class="article-meta-wrap"><span class="post-meta-date"><i class="far fa-calendar-alt"></i><span class="article-meta-label">发表于</span><time datetime="2022-05-17T10:27:34.000Z" title="发表于 2022-05-17 18:27:34">2022-05-17</time></span></div><div class="content">
+      <div class="widget">
+    <h3 class="widget-title">公告</h3>
+    <div class="widget-body">
+        <div id="board">
+            <div class="content">
+                <p>欢迎交流与分享经验!</p>
+            </div>
+        </div>
+    </div>
+</div>
 
-复盘：
-先下个结论，答案有问题。故进行讨论
-讨论派 分别分为258.17 和258.18, 268.112
-第一种思路：是正确的由于数据全为int，有现成函数故不需要用模版，
-而fun &lt; int &gt;(2,3)，由于加入了模版调用的&lt; int &gt;故函数模版会生成一个函数。故返回的便是2+3；
-其他思路都不正确
+    
+      
 
-
-bike1无参数，进入派生类构造，派生类构造调用基类构造，故先输出w，然后轮到派生构造输出E,bike2 相当于给了G，然后还是派生类构造调用基类构造W,然后输出G，接着进行析构函数输出DD
-1234567891011121314151617181920212223242526272829303132333435363738#include&lt;iostream&gt;using namespace std;class Base &#123;public:	Base() &#123;		cout &lt;&lt; &quot;1&quot; &lt;&lt; endl;		try &#123;			throw &quot;2&quot;;		&# ...</div></div></div><div class="recent-post-item"><div class="post_cover right"><a href="/2022/05/17/%E6%B8%A9%E6%95%85%E8%80%8C%E7%9F%A5%E6%96%B0c-%E4%B9%A6%E6%9C%AC%E5%86%8D%E6%AC%A1%E9%98%85%E8%AF%BB/" title="温故而知新c++书本再次阅读"><img class="post_bg" src="data:image/gif;base64,R0lGODlhAQABAIAAAAAAAP///yH5BAEAAAAALAAAAAABAAEAAAIBRAA7" onerror="this.onerror=null;this.src='/img/404.jpg'" alt="温故而知新c++书本再次阅读"></a></div><div class="recent-post-info"><a class="article-title" href="/2022/05/17/%E6%B8%A9%E6%95%85%E8%80%8C%E7%9F%A5%E6%96%B0c-%E4%B9%A6%E6%9C%AC%E5%86%8D%E6%AC%A1%E9%98%85%E8%AF%BB/" title="温故而知新c++书本再次阅读">温故而知新c++书本再次阅读</a><div class="article-meta-wrap"><span class="post-meta-date"><i class="far fa-calendar-alt"></i><span class="article-meta-label">发表于</span><time datetime="2022-05-17T07:35:01.000Z" title="发表于 2022-05-17 15:35:01">2022-05-17</time></span></div><div class="content">前言：本篇是对c++的温故与知新。需要一定基础
-
-goto的使用无论是c还是c++都对其讳莫如深，其实goto也有好用的地方，在多重循坏时，goto就可以轻松出来。但容易被黑客利用，使用goto到想要程序执行的地方
-auto与decltypeauto 和 decltype 都是类型推断的方式
-区别如下：
-1、auto 是通过编译器计算变量的初始值来推断类型，decltype同样也是通过编译器来分析表达式进而得到它的类型，但是它不用将表达式的值计算出来
-2、编译器推断出来的auto类型可能与初始值类型不同，众多周知，使用引用实际是使用引用的对象，特别是当引用被用作初始值时，真正参与初始化的值其实是引用对象的值，此时编译器以引用对象的类型作为auto的类型，比如对于顶层const，auto会忽略顶层const性质，但是decltype是保留下来的
-123456789auto 和 decltype 都是类型推断的方式区别如下：1、auto 是通过编译器计算变量的初始值来推断类型，decltype同样也是通过编译器来分析表达式进而得到它的类型，但是它不用将表达式的值计算出来 2、编译器推断出来 ...</div></div></div><div class="recent-post-item"><div class="post_cover left"><a href="/2022/05/17/c-%E5%BE%80%E5%B9%B4%E8%AF%95%E5%8D%B7%E4%B8%8A%E7%9A%84%E9%97%AE%E9%A2%98%EF%BC%88%E5%80%BC%E5%BE%97%E4%B8%80%E7%9C%8B%EF%BC%89/" title="c++往年试卷上的问题（值得一看）"><img class="post_bg" src="data:image/gif;base64,R0lGODlhAQABAIAAAAAAAP///yH5BAEAAAAALAAAAAABAAEAAAIBRAA7" onerror="this.onerror=null;this.src='/img/404.jpg'" alt="c++往年试卷上的问题（值得一看）"></a></div><div class="recent-post-info"><a class="article-title" href="/2022/05/17/c-%E5%BE%80%E5%B9%B4%E8%AF%95%E5%8D%B7%E4%B8%8A%E7%9A%84%E9%97%AE%E9%A2%98%EF%BC%88%E5%80%BC%E5%BE%97%E4%B8%80%E7%9C%8B%EF%BC%89/" title="c++往年试卷上的问题（值得一看）">c++往年试卷上的问题（值得一看）</a><div class="article-meta-wrap"><span class="post-meta-date"><i class="far fa-calendar-alt"></i><span class="article-meta-label">发表于</span><time datetime="2022-05-17T06:27:49.000Z" title="发表于 2022-05-17 14:27:49">2022-05-17</time></span></div><div class="content">练习九
-所有的class可以换成typename，而反过来则不行，说明typename范围更大
-模版成员函数都是模版函数，无论有没有模版参数（虚拟类型参数）
-
-练习十
-析构函数未执行，因为抛出异常后，发生栈的解旋
-多态问题编译时多态：模版，重载
-运行时多态：虚函数，指针，引用
-
-没看到是友元函数，呜呜
-
-/ 必为双目运算，没仔细读题，错了，啊这。
+    
+      
+  <div class="widget">
+    <h3 class="widget-title">标签</h3>
+    <div class="widget-body">
+      <ul class="tag-list" itemprop="keywords"><li class="tag-list-item"><a class="tag-list-link" href="/tags/c/" rel="tag">c++</a><span class="tag-list-count">5</span></li><li class="tag-list-item"><a class="tag-list-link" href="/tags/c-%E5%AD%A6%E4%B9%A0/" rel="tag">c++学习</a><span class="tag-list-count">2</span></li><li class="tag-list-item"><a class="tag-list-link" href="/tags/%E7%AE%97%E6%B3%95%E5%AD%A6%E4%B9%A0/" rel="tag">算法学习</a><span class="tag-list-count">1</span></li><li class="tag-list-item"><a class="tag-list-link" href="/tags/%E9%80%86%E5%90%91/" rel="tag">逆向</a><span class="tag-list-count">3</span></li></ul>
+    </div>
+  </div>
 
 
-C++题：关于动态存储分配，下列说法正确的是？A、new和delete是C++语言中专门用于动态内存分配和释放的函数B、动态分配的内存空间也可以被初始化C、当系统内存不够时，会自动回收不再使用的内存单元，因此程序中不必用delete释放内存空间D、当动态分配内存失败时，系统会立刻崩溃，因此一定要慎用new
-选项A，错，new 与delete是用于动态平衡分配与释放空间的运算符，不是函数选项B，对，如int *p=new int(5);选项C，错，要使用delete释放空间，系统会统一管理，而不用delete释放的空间，会造成内存泄漏，这种程序用的次数多，会造成内存耗尽选项D，错，不成功，会返回0。
-</div></div></div><div class="recent-post-item"><div class="post_cover right"><a href="/2022/05/16/%E5%AD%A6%E4%B9%A0%E7%AC%94%E8%AE%B0/c-%E9%94%99%E9%A2%98%E9%9B%862/" title="c++错题2"><img class="post_bg" src="data:image/gif;base64,R0lGODlhAQABAIAAAAAAAP///yH5BAEAAAAALAAAAAABAAEAAAIBRAA7" onerror="this.onerror=null;this.src='/img/404.jpg'" alt="c++错题2"></a></div><div class="recent-post-info"><a class="article-title" href="/2022/05/16/%E5%AD%A6%E4%B9%A0%E7%AC%94%E8%AE%B0/c-%E9%94%99%E9%A2%98%E9%9B%862/" title="c++错题2">c++错题2</a><div class="article-meta-wrap"><span class="post-meta-date"><i class="far fa-calendar-alt"></i><span class="article-meta-label">发表于</span><time datetime="2022-05-16T15:51:40.000Z" title="发表于 2022-05-16 23:51:40">2022-05-16</time></span></div><div class="content">测试卷上的错题
-我就是菜啦，这种题可以错
+    
+      
+  <div class="widget">
+    <h3 class="widget-title">标签云</h3>
+    <div class="widget-body tagcloud">
+      <a href="/tags/c/" style="font-size: 14px;">c++</a> <a href="/tags/c-%E5%AD%A6%E4%B9%A0/" style="font-size: 13.33px;">c++学习</a> <a href="/tags/%E7%AE%97%E6%B3%95%E5%AD%A6%E4%B9%A0/" style="font-size: 13px;">算法学习</a> <a href="/tags/%E9%80%86%E5%90%91/" style="font-size: 13.67px;">逆向</a>
+    </div>
+  </div>
 
-hh，错3次了都
-
-函数和函数的地位是平等的
-
-就是
-12345678910111213class b｛int a；b(int n=0)&#123;a=n;&#125;｝;int main()&#123;b a1(3),a2;a2 = a1;return 0;&#125;
-
-这种情况不调用
-
-
-看漏了，呜呜呜。
-
-hh，这个确实是我知识点盲区
-
-可以用列表初始化
-
-静态数据外面初始化
-
-hh，这个又错一次
-
-函数的声明extern关键词是可有可无的，因为函数本身不加修饰的话就是extern的。但是引用的时候一样是需要声明的。  而全局变量在外部使用声明时，extern关键词是必须的，如果变量无extern修饰且没有显式的初始化，同样成为变量的定义，因此此时必须加extern，而编译器在此标记存储空间在执行时加载如内存并初始化为0。而局部变量的声明不能有extern的修饰，且局部变量在运行时才在堆栈部分分配内存。
-
-this在成员函数的开始前开始构造，成员的结束后清除
+    
+      
+  <div class="widget">
+    <h3 class="widget-title">归档</h3>
+    <div class="widget-body">
+      <ul class="archive-list"><li class="archive-list-item"><a class="archive-list-link" href="/archives/2022/05/">五月 2022</a><span class="archive-list-count">10</span></li><li class="archive-list-item"><a class="archive-list-link" href="/archives/2022/03/">三月 2022</a><span class="archive-list-count">1</span></li></ul>
+    </div>
+  </div>
 
 
-这就是显示运用了
+    
+      
+  <div class="widget">
+    <h3 class="widget-title">最新文章</h3>
+    <div class="widget-body">
+      <ul class="recent-post-list list-unstyled no-thumbnail">
+        
+          <li>
+            
+            <div class="item-inner">
+              <p class="item-category">
+                
+              </p>
+              <p class="item-title">
+                <a href="/2022/05/17/%E5%AF%9D%E5%AE%A4c-%E5%A4%A7%E8%AE%A8%E8%AE%BA%E7%9A%84%E9%97%AE%E9%A2%98/" class="title">寝室c++大讨论的问题</a>
+              </p>
+              <p class="item-date">
+                <time datetime="2022-05-17T10:27:34.000Z" itemprop="datePublished">2022-05-17</time>
+              </p>
+            </div>
+          </li>
+          
+          <li>
+            
+            <div class="item-inner">
+              <p class="item-category">
+                
+              </p>
+              <p class="item-title">
+                <a href="/2022/05/17/%E6%B8%A9%E6%95%85%E8%80%8C%E7%9F%A5%E6%96%B0c-%E4%B9%A6%E6%9C%AC%E5%86%8D%E6%AC%A1%E9%98%85%E8%AF%BB/" class="title">温故而知新c++书本再次阅读</a>
+              </p>
+              <p class="item-date">
+                <time datetime="2022-05-17T07:35:01.000Z" itemprop="datePublished">2022-05-17</time>
+              </p>
+            </div>
+          </li>
+          
+          <li>
+            
+            <div class="item-inner">
+              <p class="item-category">
+                
+              </p>
+              <p class="item-title">
+                <a href="/2022/05/17/c-%E5%BE%80%E5%B9%B4%E8%AF%95%E5%8D%B7%E4%B8%8A%E7%9A%84%E9%97%AE%E9%A2%98%EF%BC%88%E5%80%BC%E5%BE%97%E4%B8%80%E7%9C%8B%EF%BC%89/" class="title">c++往年试卷上的问题（值得一看）</a>
+              </p>
+              <p class="item-date">
+                <time datetime="2022-05-17T06:27:49.000Z" itemprop="datePublished">2022-05-17</time>
+              </p>
+            </div>
+          </li>
+          
+          <li>
+            
+            <div class="item-inner">
+              <p class="item-category">
+                
+              </p>
+              <p class="item-title">
+                <a href="/2022/05/16/%E5%AD%A6%E4%B9%A0%E7%AC%94%E8%AE%B0/c-%E9%94%99%E9%A2%98%E9%9B%862/" class="title">c++错题2</a>
+              </p>
+              <p class="item-date">
+                <time datetime="2022-05-16T15:51:40.000Z" itemprop="datePublished">2022-05-16</time>
+              </p>
+            </div>
+          </li>
+          
+          <li>
+            
+            <div class="item-inner">
+              <p class="item-category">
+                
+              </p>
+              <p class="item-title">
+                <a href="/2022/05/16/%E5%AD%A6%E4%B9%A0%E7%AC%94%E8%AE%B0/2022-05-16-C++%E5%AD%A6%E4%B9%A0%E7%AC%94%E8%AE%B0/" class="title">C++复习笔记</a>
+              </p>
+              <p class="item-date">
+                <time datetime="2022-05-16T11:20:10.000Z" itemprop="datePublished">2022-05-16</time>
+              </p>
+            </div>
+          </li>
+          
+      </ul>
+    </div>
+  </div>
+  
 
-这个百思不得其解，应该是b，所有就有点说不通了
-比如 ...</div></div></div><div class="recent-post-item"><div class="post_cover left"><a href="/2022/05/16/%E5%AD%A6%E4%B9%A0%E7%AC%94%E8%AE%B0/2022-05-16-C++%E5%AD%A6%E4%B9%A0%E7%AC%94%E8%AE%B0/" title="C++复习笔记"><img class="post_bg" src="data:image/gif;base64,R0lGODlhAQABAIAAAAAAAP///yH5BAEAAAAALAAAAAABAAEAAAIBRAA7" onerror="this.onerror=null;this.src='/img/404.jpg'" alt="C++复习笔记"></a></div><div class="recent-post-info"><a class="article-title" href="/2022/05/16/%E5%AD%A6%E4%B9%A0%E7%AC%94%E8%AE%B0/2022-05-16-C++%E5%AD%A6%E4%B9%A0%E7%AC%94%E8%AE%B0/" title="C++复习笔记">C++复习笔记</a><div class="article-meta-wrap"><span class="post-meta-date"><i class="far fa-calendar-alt"></i><span class="article-meta-label">发表于</span><time datetime="2022-05-16T11:20:10.000Z" title="发表于 2022-05-16 19:20:10">2022-05-16</time></span></div><div class="content">C++复习笔记第2章，c++简单程序设计1，c++语言概述1， c++产生优点 ：
-一：
-1 ，语言简洁灵活
-2 ，运算符和数据结构丰富
-3 ， 具有结构化控制语句
-4 ， 程序执行效率高
-5 ， 具有高级语言与汇编语言的优点，可以直接访问物理地址
-二：c++在语言基础上支持面向对象的程序设计，一个通用目的程序设计语言
-2，c++的特点一：尽量兼容c
-1,保持c的简洁，高效。接近汇编语言的特点
-2，促进了c++的普及和面向对象技术的广泛应用
-3，不是纯正的面向对象语言；既支持面向过程，又支持面向对象
-二：支持面向对象的方法 
-面向对象思维
-3，c++程序实例1,using namespace std;
-2,cout:输出流对象 &lt;&lt;:插入运算符 endl;换行
-3，int main() 语法规定 main()函数 返回int 型
-4，字符集5，语法记号1，关键字c++预先声明的单词
-2，标识符1，定义：程序员自定义的单词，变体
-2，构成规则：
+    
+  </div>
+</aside>
 
-以大小写字母或下划线_开始
-可以由大小写字母，下划线或数字0~9组成
-大小代表不同的表示符
+  
+  <main class="main" role="main">
+  
+  <div class="content article-list">
+    
+      <article class="article article-type-post" itemscope itemtype="http://schema.org/BlogPosting">
+  <div class="article-header">
+    
+  
+    <h1 itemprop="name">
+      <a class="article-title" href="/2022/05/17/%E5%AF%9D%E5%AE%A4c-%E5%A4%A7%E8%AE%A8%E8%AE%BA%E7%9A%84%E9%97%AE%E9%A2%98/">寝室c++大讨论的问题</a>
+    </h1>
+  
 
-3，文字能使用符号表示数据
-4，操作 ...</div></div></div><div class="recent-post-item"><div class="post_cover right"><a href="/2022/05/16/%E5%AD%A6%E4%B9%A0%E7%AC%94%E8%AE%B0/DFS%EF%BC%8CBFS/" title="DFS BFS 在迷宫题中的运用"><img class="post_bg" src="data:image/gif;base64,R0lGODlhAQABAIAAAAAAAP///yH5BAEAAAAALAAAAAABAAEAAAIBRAA7" onerror="this.onerror=null;this.src='/img/404.jpg'" alt="DFS BFS 在迷宫题中的运用"></a></div><div class="recent-post-info"><a class="article-title" href="/2022/05/16/%E5%AD%A6%E4%B9%A0%E7%AC%94%E8%AE%B0/DFS%EF%BC%8CBFS/" title="DFS BFS 在迷宫题中的运用">DFS BFS 在迷宫题中的运用</a><div class="article-meta-wrap"><span class="post-meta-date"><i class="far fa-calendar-alt"></i><span class="article-meta-label">发表于</span><time datetime="2022-05-16T11:20:10.000Z" title="发表于 2022-05-16 19:20:10">2022-05-16</time></span></div><div class="content">图的种类1，无向图 ：在无向图中，每个定点和其他顶点通过连线连接
-2，有向图 ：有向图中的相连线是有方向的
-3，权重图 ：在权重图中，每条相连线有各自的权重
-
-
-</div></div></div><div class="recent-post-item"><div class="post_cover left"><a href="/2022/05/16/%E5%AD%A6%E4%B9%A0%E7%AC%94%E8%AE%B0/c++%E9%94%99%E9%A2%98%E9%9B%86/" title="c++错题集"><img class="post_bg" src="data:image/gif;base64,R0lGODlhAQABAIAAAAAAAP///yH5BAEAAAAALAAAAAABAAEAAAIBRAA7" onerror="this.onerror=null;this.src='/img/404.jpg'" alt="c++错题集"></a></div><div class="recent-post-info"><a class="article-title" href="/2022/05/16/%E5%AD%A6%E4%B9%A0%E7%AC%94%E8%AE%B0/c++%E9%94%99%E9%A2%98%E9%9B%86/" title="c++错题集">c++错题集</a><div class="article-meta-wrap"><span class="post-meta-date"><i class="far fa-calendar-alt"></i><span class="article-meta-label">发表于</span><time datetime="2022-05-16T11:20:10.000Z" title="发表于 2022-05-16 19:20:10">2022-05-16</time></span></div><div class="content">学习通中错题集
-
-这道题之前做错了一次，现在做又错了一次。呜呜呜
-
-构造函数自己定义了后就不生产默认缺参的了
-
-友元关系 1，不可传递  2，单向 3，不可继承
-
-友元函数不是成员函数，但可以访问所以的成员
-
-没毛病
-
-静态成员直接写就好了，主要在类外初始化
-常成员可以用列表初始化
-只能在构造函数这用列表
-
-常成员只能用常函数，但非常成员却可以调用常函数
+  </div>
+  
+  <p class="article-meta">
+    <span class="article-date">
+    <i class="icon icon-calendar-check"></i>
+	<a href="/2022/05/17/%E5%AF%9D%E5%AE%A4c-%E5%A4%A7%E8%AE%A8%E8%AE%BA%E7%9A%84%E9%97%AE%E9%A2%98/" class="article-date">
+	  <time datetime="2022-05-17T10:27:34.000Z" itemprop="datePublished">5月 17</time>
+	</a>
+</span>
+    
+    
+  <span class="article-tag">
+    <i class="icon icon-tags"></i>
+	<a class="article-tag-link-link" href="/tags/c/" rel="tag">c++</a>
+  </span>
 
 
-用对象初始化时，调用复制构造函数与重载=无关。
-顺便一提，重载=只能为类成员函数
+    <span class="post-comment"><i class="icon icon-comment"></i> <a href="/2022/05/17/%E5%AF%9D%E5%AE%A4c-%E5%A4%A7%E8%AE%A8%E8%AE%BA%E7%9A%84%E9%97%AE%E9%A2%98/#comments" class="article-comment-link">评论</a></span>
+    
+	
+		<span class="post-wordcount hidden-xs" itemprop="wordCount">字数统计: 370(字)</span>
+	
+	
+		<span class="post-readcount hidden-xs" itemprop="timeRequired">阅读时长: 1(分)</span>
+	
 
-左边基类 = 右边 派生类 符合这个格式就可以
-返回值是基类，故最后派生类要转化成基类，c正确
-而d，把派生类等于基类，错误
+  </p>
+</article>
 
-保护继承不能直接访问
+    
+      <article class="article article-type-post" itemscope itemtype="http://schema.org/BlogPosting">
+  <div class="article-header">
+    
+  
+    <h1 itemprop="name">
+      <a class="article-title" href="/2022/05/17/%E6%B8%A9%E6%95%85%E8%80%8C%E7%9F%A5%E6%96%B0c-%E4%B9%A6%E6%9C%AC%E5%86%8D%E6%AC%A1%E9%98%85%E8%AF%BB/">温故而知新c++书本再次阅读</a>
+    </h1>
+  
+
+  </div>
+  
+  <p class="article-meta">
+    <span class="article-date">
+    <i class="icon icon-calendar-check"></i>
+	<a href="/2022/05/17/%E6%B8%A9%E6%95%85%E8%80%8C%E7%9F%A5%E6%96%B0c-%E4%B9%A6%E6%9C%AC%E5%86%8D%E6%AC%A1%E9%98%85%E8%AF%BB/" class="article-date">
+	  <time datetime="2022-05-17T07:35:01.000Z" itemprop="datePublished">5月 17</time>
+	</a>
+</span>
+    
+    
+  <span class="article-tag">
+    <i class="icon icon-tags"></i>
+	<a class="article-tag-link-link" href="/tags/c/" rel="tag">c++</a>
+  </span>
 
 
-– 不用int
+    <span class="post-comment"><i class="icon icon-comment"></i> <a href="/2022/05/17/%E6%B8%A9%E6%95%85%E8%80%8C%E7%9F%A5%E6%96%B0c-%E4%B9%A6%E6%9C%AC%E5%86%8D%E6%AC%A1%E9%98%85%E8%AF%BB/#comments" class="article-comment-link">评论</a></span>
+    
+	
+		<span class="post-wordcount hidden-xs" itemprop="wordCount">字数统计: 1.3k(字)</span>
+	
+	
+		<span class="post-readcount hidden-xs" itemprop="timeRequired">阅读时长: 4(分)</span>
+	
 
-这个要说一下 要在类中定义 ，无需参数，无需返回值，故D错误
+  </p>
+</article>
 
-由于基类是虚函数
-继承到派生类，如果有相同的函数会覆盖。故调用的全是派生类的。
+    
+      <article class="article article-type-post" itemscope itemtype="http://schema.org/BlogPosting">
+  <div class="article-header">
+    
+  
+    <h1 itemprop="name">
+      <a class="article-title" href="/2022/05/17/c-%E5%BE%80%E5%B9%B4%E8%AF%95%E5%8D%B7%E4%B8%8A%E7%9A%84%E9%97%AE%E9%A2%98%EF%BC%88%E5%80%BC%E5%BE%97%E4%B8%80%E7%9C%8B%EF%BC%89/">c++往年试卷上的问题（值得一看）</a>
+    </h1>
+  
 
-B *p=&amp;obj
-同理，有虚函数，有虚函数的则用派生类的，没有的则用基类的
-故为DB
-</div></div></div><div class="recent-post-item"><div class="post_cover right"><a href="/2022/05/16/%E9%80%86%E5%90%91/2022Sloth%E9%80%89%E6%8B%94%E8%B5%9B/" title="2022Sloth选拔赛"><img class="post_bg" src="data:image/gif;base64,R0lGODlhAQABAIAAAAAAAP///yH5BAEAAAAALAAAAAABAAEAAAIBRAA7" onerror="this.onerror=null;this.src='/img/404.jpg'" alt="2022Sloth选拔赛"></a></div><div class="recent-post-info"><a class="article-title" href="/2022/05/16/%E9%80%86%E5%90%91/2022Sloth%E9%80%89%E6%8B%94%E8%B5%9B/" title="2022Sloth选拔赛">2022Sloth选拔赛</a><div class="article-meta-wrap"><span class="post-meta-date"><i class="far fa-calendar-alt"></i><span class="article-meta-label">发表于</span><time datetime="2022-05-16T07:20:10.000Z" title="发表于 2022-05-16 15:20:10">2022-05-16</time></span></div><div class="content">HSCTFcheckininin直接用IDA打开
-查看伪代码
-123456789101112131415161718192021222324252627282930313233343536373839404142434445464748495051525354555657585960616263646566676869707172737475767778798081828384858687888990919293949596979899100101102103104105106107108109110111112113114115116117118119120121122123124125126127128129130131132133134135136137138139140141142143144145146147148149150151152_int64 __fastcall main(int a1, char **a2, char **a3)&#123;  int i; // [rsp+Ch] [rbp-B4h]  char v5[32]; // [rsp+10h] [rbp- ...</div></div></div><div class="recent-post-item"><div class="post_cover left"><a href="/2022/05/15/%E9%80%86%E5%90%91/re_SMC/" title="SMC"><img class="post_bg" src="data:image/gif;base64,R0lGODlhAQABAIAAAAAAAP///yH5BAEAAAAALAAAAAABAAEAAAIBRAA7" onerror="this.onerror=null;this.src='/img/404.jpg'" alt="SMC"></a></div><div class="recent-post-info"><a class="article-title" href="/2022/05/15/%E9%80%86%E5%90%91/re_SMC/" title="SMC">SMC</a><div class="article-meta-wrap"><span class="post-meta-date"><i class="far fa-calendar-alt"></i><span class="article-meta-label">发表于</span><time datetime="2022-05-15T13:20:10.000Z" title="发表于 2022-05-15 21:20:10">2022-05-15</time></span></div><div class="content">Self-Modifying CodeSMC是英文Self-Modifying Code的缩写形式，顾名思义，就是“代码自修改”也就是说可以在一段代码执行之前先对它进行修改。可以在一段代码执行前对它进行修改。常常利用这个特性，把代码以加密的形式保存在可自行文件中，然后在程序执行的时候进行动态解析。这样我们在采用静态分析时，看到的都是加密的内容，从而阻断了静态调试的可能性。
+  </div>
+  
+  <p class="article-meta">
+    <span class="article-date">
+    <i class="icon icon-calendar-check"></i>
+	<a href="/2022/05/17/c-%E5%BE%80%E5%B9%B4%E8%AF%95%E5%8D%B7%E4%B8%8A%E7%9A%84%E9%97%AE%E9%A2%98%EF%BC%88%E5%80%BC%E5%BE%97%E4%B8%80%E7%9C%8B%EF%BC%89/" class="article-date">
+	  <time datetime="2022-05-17T06:27:49.000Z" itemprop="datePublished">5月 17</time>
+	</a>
+</span>
+    
+    
+  <span class="article-tag">
+    <i class="icon icon-tags"></i>
+	<a class="article-tag-link-link" href="/tags/c/" rel="tag">c++</a>
+  </span>
 
-历史上：  SMC技术在DOS时代非常流行，因为DOS时代更接近系统底层。所以即便是现在实现SMC技术，都以汇编码最为方便。
- 利用SMC技术的这个特点，在设计加密方案时，可以把代码以加密形式保存在可执行文件中，然后在程序执行时再动态解密，这样可以有效地对付静态分析。因此要想了解被加密的代码的功能，只有动态跟踪或者分析出解密函数的位置编写程序来解密这些代码。 
-目标特征发现无法关键点无法反编译
 
-函数不能构成（Create Function）完整函数；
+    <span class="post-comment"><i class="icon icon-comment"></i> <a href="/2022/05/17/c-%E5%BE%80%E5%B9%B4%E8%AF%95%E5%8D%B7%E4%B8%8A%E7%9A%84%E9%97%AE%E9%A2%98%EF%BC%88%E5%80%BC%E5%BE%97%E4%B8%80%E7%9C%8B%EF%BC%89/#comments" class="article-comment-link">评论</a></span>
+    
+	
+		<span class="post-wordcount hidden-xs" itemprop="wordCount">字数统计: 347(字)</span>
+	
+	
+		<span class="post-readcount hidden-xs" itemprop="timeRequired">阅读时长: 1(分)</span>
+	
 
-找到关键地方，找不出花之令，查看其它地方，发现地址中被异或了一个常数。
+  </p>
+</article>
 
-基于没有人为干预影响到IDA的自动化分析过程；无法创建完整函数可以料想有非常规代码存在（ ...</div></div></div><div class="recent-post-item"><div class="post_cover right"><a href="/2022/05/14/%E9%80%86%E5%90%91/2022514%20RE%E4%BA%A4%E6%B5%81/" title="控制流平坦化"><img class="post_bg" src="data:image/gif;base64,R0lGODlhAQABAIAAAAAAAP///yH5BAEAAAAALAAAAAABAAEAAAIBRAA7" onerror="this.onerror=null;this.src='/img/404.jpg'" alt="控制流平坦化"></a></div><div class="recent-post-info"><a class="article-title" href="/2022/05/14/%E9%80%86%E5%90%91/2022514%20RE%E4%BA%A4%E6%B5%81/" title="控制流平坦化">控制流平坦化</a><div class="article-meta-wrap"><span class="post-meta-date"><i class="far fa-calendar-alt"></i><span class="article-meta-label">发表于</span><time datetime="2022-05-14T03:20:10.000Z" title="发表于 2022-05-14 11:20:10">2022-05-14</time></span></div><div class="content">控制流平坦化题目
-链接：https://pan.baidu.com/s/1Uo5dS8lwaB797hzxlWy02w提取码：acu9
-控制流平坦化的简单原理程序可以分块
-例如
-1234if(choice == 1)    n = 1;else    n = 2;
+    
+      <article class="article article-type-post" itemscope itemtype="http://schema.org/BlogPosting">
+  <div class="article-header">
+    
+  
+    <h1 itemprop="name">
+      <a class="article-title" href="/2022/05/16/%E5%AD%A6%E4%B9%A0%E7%AC%94%E8%AE%B0/c-%E9%94%99%E9%A2%98%E9%9B%862/">c++错题2</a>
+    </h1>
+  
 
-那么就可以看成
+  </div>
+  
+  <p class="article-meta">
+    <span class="article-date">
+    <i class="icon icon-calendar-check"></i>
+	<a href="/2022/05/16/%E5%AD%A6%E4%B9%A0%E7%AC%94%E8%AE%B0/c-%E9%94%99%E9%A2%98%E9%9B%862/" class="article-date">
+	  <time datetime="2022-05-16T15:51:40.000Z" itemprop="datePublished">5月 16</time>
+	</a>
+</span>
+    
+    
+  <span class="article-tag">
+    <i class="icon icon-tags"></i>
+	<a class="article-tag-link-link" href="/tags/c/" rel="tag">c++</a>
+  </span>
 
-但是在控制流平坦化处理后
 
-将会有一个分发器来处理所有块的先后顺序,而不是由程序逻辑来控制,使逆向逻辑变得困难
-控制流平坦化的识别拿到题目用ida打开
+    <span class="post-comment"><i class="icon icon-comment"></i> <a href="/2022/05/16/%E5%AD%A6%E4%B9%A0%E7%AC%94%E8%AE%B0/c-%E9%94%99%E9%A2%98%E9%9B%862/#comments" class="article-comment-link">评论</a></span>
+    
+	
+		<span class="post-wordcount hidden-xs" itemprop="wordCount">字数统计: 578(字)</span>
+	
+	
+		<span class="post-readcount hidden-xs" itemprop="timeRequired">阅读时长: 2(分)</span>
+	
 
-会遇到一些永真永假语法
-比如 
-123456789101112  while ( v26 == -2072439640 )  &#123;    ++v32;    v26 = 2031187738;  &#125;  if ( v26 != -2025406346 )    break;  v37 += 2;  v26 = 1553621579;&#125;if ( v26 != -1893316366 )  break;
+  </p>
+</article>
 
-v26是满足其中的某一个赋值语句,但有很多对v26进行判断的语句,很多是不必要执行的,程序中存在混淆
-查看程序流程图(见上图)
- ...</div></div></div><nav id="pagination"><div class="pagination"><span class="page-number current">1</span><a class="page-number" href="/page/2/#content-inner">2</a><a class="extend next" rel="next" href="/page/2/#content-inner"><i class="fas fa-chevron-right fa-fw"></i></a></div></nav></div><div class="aside-content" id="aside-content"><div class="card-widget card-info"><div class="is-center"><div class="avatar-img"><img src="https://i.loli.net/2021/02/24/5O1day2nriDzjSu.png" onerror="this.onerror=null;this.src='/img/friend_404.gif'" alt="avatar"/></div><div class="author-info__name">雨后初霁</div><div class="author-info__description"></div></div><div class="card-info-data site-data is-center"><a href="/archives/"><div class="headline">文章</div><div class="length-num">11</div></a><a href="/tags/"><div class="headline">标签</div><div class="length-num">4</div></a><a href="/categories/"><div class="headline">分类</div><div class="length-num">0</div></a></div><a id="card-info-btn" target="_blank" rel="noopener" href="https://github.com/xxxxxx"><i class="fab fa-github"></i><span>Follow Me</span></a></div><div class="card-widget card-announcement"><div class="item-headline"><i class="fas fa-bullhorn fa-shake"></i><span>公告</span></div><div class="announcement_content">This is my Blog</div></div><div class="sticky_layout"><div class="card-widget card-recent-post"><div class="item-headline"><i class="fas fa-history"></i><span>最新文章</span></div><div class="aside-list"><div class="aside-list-item"><a class="thumbnail" href="/2022/05/17/%E5%AF%9D%E5%AE%A4c-%E5%A4%A7%E8%AE%A8%E8%AE%BA%E7%9A%84%E9%97%AE%E9%A2%98/" title="寝室c++大讨论的问题"><img src="data:image/gif;base64,R0lGODlhAQABAIAAAAAAAP///yH5BAEAAAAALAAAAAABAAEAAAIBRAA7" onerror="this.onerror=null;this.src='/img/404.jpg'" alt="寝室c++大讨论的问题"/></a><div class="content"><a class="title" href="/2022/05/17/%E5%AF%9D%E5%AE%A4c-%E5%A4%A7%E8%AE%A8%E8%AE%BA%E7%9A%84%E9%97%AE%E9%A2%98/" title="寝室c++大讨论的问题">寝室c++大讨论的问题</a><time datetime="2022-05-17T10:27:34.000Z" title="发表于 2022-05-17 18:27:34">2022-05-17</time></div></div><div class="aside-list-item"><a class="thumbnail" href="/2022/05/17/%E6%B8%A9%E6%95%85%E8%80%8C%E7%9F%A5%E6%96%B0c-%E4%B9%A6%E6%9C%AC%E5%86%8D%E6%AC%A1%E9%98%85%E8%AF%BB/" title="温故而知新c++书本再次阅读"><img src="data:image/gif;base64,R0lGODlhAQABAIAAAAAAAP///yH5BAEAAAAALAAAAAABAAEAAAIBRAA7" onerror="this.onerror=null;this.src='/img/404.jpg'" alt="温故而知新c++书本再次阅读"/></a><div class="content"><a class="title" href="/2022/05/17/%E6%B8%A9%E6%95%85%E8%80%8C%E7%9F%A5%E6%96%B0c-%E4%B9%A6%E6%9C%AC%E5%86%8D%E6%AC%A1%E9%98%85%E8%AF%BB/" title="温故而知新c++书本再次阅读">温故而知新c++书本再次阅读</a><time datetime="2022-05-17T07:35:01.000Z" title="发表于 2022-05-17 15:35:01">2022-05-17</time></div></div><div class="aside-list-item"><a class="thumbnail" href="/2022/05/17/c-%E5%BE%80%E5%B9%B4%E8%AF%95%E5%8D%B7%E4%B8%8A%E7%9A%84%E9%97%AE%E9%A2%98%EF%BC%88%E5%80%BC%E5%BE%97%E4%B8%80%E7%9C%8B%EF%BC%89/" title="c++往年试卷上的问题（值得一看）"><img src="data:image/gif;base64,R0lGODlhAQABAIAAAAAAAP///yH5BAEAAAAALAAAAAABAAEAAAIBRAA7" onerror="this.onerror=null;this.src='/img/404.jpg'" alt="c++往年试卷上的问题（值得一看）"/></a><div class="content"><a class="title" href="/2022/05/17/c-%E5%BE%80%E5%B9%B4%E8%AF%95%E5%8D%B7%E4%B8%8A%E7%9A%84%E9%97%AE%E9%A2%98%EF%BC%88%E5%80%BC%E5%BE%97%E4%B8%80%E7%9C%8B%EF%BC%89/" title="c++往年试卷上的问题（值得一看）">c++往年试卷上的问题（值得一看）</a><time datetime="2022-05-17T06:27:49.000Z" title="发表于 2022-05-17 14:27:49">2022-05-17</time></div></div><div class="aside-list-item"><a class="thumbnail" href="/2022/05/16/%E5%AD%A6%E4%B9%A0%E7%AC%94%E8%AE%B0/c-%E9%94%99%E9%A2%98%E9%9B%862/" title="c++错题2"><img src="data:image/gif;base64,R0lGODlhAQABAIAAAAAAAP///yH5BAEAAAAALAAAAAABAAEAAAIBRAA7" onerror="this.onerror=null;this.src='/img/404.jpg'" alt="c++错题2"/></a><div class="content"><a class="title" href="/2022/05/16/%E5%AD%A6%E4%B9%A0%E7%AC%94%E8%AE%B0/c-%E9%94%99%E9%A2%98%E9%9B%862/" title="c++错题2">c++错题2</a><time datetime="2022-05-16T15:51:40.000Z" title="发表于 2022-05-16 23:51:40">2022-05-16</time></div></div><div class="aside-list-item"><a class="thumbnail" href="/2022/05/16/%E5%AD%A6%E4%B9%A0%E7%AC%94%E8%AE%B0/2022-05-16-C++%E5%AD%A6%E4%B9%A0%E7%AC%94%E8%AE%B0/" title="C++复习笔记"><img src="data:image/gif;base64,R0lGODlhAQABAIAAAAAAAP///yH5BAEAAAAALAAAAAABAAEAAAIBRAA7" onerror="this.onerror=null;this.src='/img/404.jpg'" alt="C++复习笔记"/></a><div class="content"><a class="title" href="/2022/05/16/%E5%AD%A6%E4%B9%A0%E7%AC%94%E8%AE%B0/2022-05-16-C++%E5%AD%A6%E4%B9%A0%E7%AC%94%E8%AE%B0/" title="C++复习笔记">C++复习笔记</a><time datetime="2022-05-16T11:20:10.000Z" title="发表于 2022-05-16 19:20:10">2022-05-16</time></div></div></div></div><div class="card-widget card-tags"><div class="item-headline"><i class="fas fa-tags"></i><span>标签</span></div><div class="card-tag-cloud"><a href="/tags/c/" style="font-size: 1.5em; color: #99a9bf">c++</a> <a href="/tags/c-%E5%AD%A6%E4%B9%A0/" style="font-size: 1.23em; color: #999ea6">c++学习</a> <a href="/tags/%E7%AE%97%E6%B3%95%E5%AD%A6%E4%B9%A0/" style="font-size: 1.1em; color: #999">算法学习</a> <a href="/tags/%E9%80%86%E5%90%91/" style="font-size: 1.37em; color: #99a4b2">逆向</a></div></div><div class="card-widget card-archives"><div class="item-headline"><i class="fas fa-archive"></i><span>归档</span></div><ul class="card-archive-list"><li class="card-archive-list-item"><a class="card-archive-list-link" href="/archives/2022/05/"><span class="card-archive-list-date">五月 2022</span><span class="card-archive-list-count">10</span></a></li><li class="card-archive-list-item"><a class="card-archive-list-link" href="/archives/2022/03/"><span class="card-archive-list-date">三月 2022</span><span class="card-archive-list-count">1</span></a></li></ul></div><div class="card-widget card-webinfo"><div class="item-headline"><i class="fas fa-chart-line"></i><span>网站资讯</span></div><div class="webinfo"><div class="webinfo-item"><div class="item-name">文章数目 :</div><div class="item-count">11</div></div><div class="webinfo-item"><div class="item-name">本站访客数 :</div><div class="item-count" id="busuanzi_value_site_uv"></div></div><div class="webinfo-item"><div class="item-name">本站总访问量 :</div><div class="item-count" id="busuanzi_value_site_pv"></div></div><div class="webinfo-item"><div class="item-name">最后更新时间 :</div><div class="item-count" id="last-push-date" data-lastPushDate="2022-05-17T12:29:00.403Z"></div></div></div></div></div></div></main><footer id="footer"><div id="footer-wrap"><div class="copyright">&copy;2020 - 2022 By 雨后初霁</div><div class="framework-info"><span>框架 </span><a target="_blank" rel="noopener" href="https://hexo.io">Hexo</a><span class="footer-separator">|</span><span>主题 </span><a target="_blank" rel="noopener" href="https://github.com/jerryc127/hexo-theme-butterfly">Butterfly</a></div></div></footer></div><div id="rightside"><div id="rightside-config-hide"><button id="darkmode" type="button" title="浅色和深色模式转换"><i class="fas fa-adjust"></i></button><button id="hide-aside-btn" type="button" title="单栏和双栏切换"><i class="fas fa-arrows-alt-h"></i></button></div><div id="rightside-config-show"><button id="rightside_config" type="button" title="设置"><i class="fas fa-cog fa-spin"></i></button><button id="go-up" type="button" title="回到顶部"><i class="fas fa-arrow-up"></i></button></div></div><div><script src="/js/utils.js"></script><script src="/js/main.js"></script><script src="https://cdn.jsdelivr.net/npm/@fancyapps/ui/dist/fancybox.umd.js"></script><div class="js-pjax"></div><script async data-pjax src="//busuanzi.ibruce.info/busuanzi/2.3/busuanzi.pure.mini.js"></script></div></body></html>
+    
+      <article class="article article-type-post" itemscope itemtype="http://schema.org/BlogPosting">
+  <div class="article-header">
+    
+  
+    <h1 itemprop="name">
+      <a class="article-title" href="/2022/05/16/%E5%AD%A6%E4%B9%A0%E7%AC%94%E8%AE%B0/2022-05-16-C++%E5%AD%A6%E4%B9%A0%E7%AC%94%E8%AE%B0/">C++复习笔记</a>
+    </h1>
+  
+
+  </div>
+  
+  <p class="article-meta">
+    <span class="article-date">
+    <i class="icon icon-calendar-check"></i>
+	<a href="/2022/05/16/%E5%AD%A6%E4%B9%A0%E7%AC%94%E8%AE%B0/2022-05-16-C++%E5%AD%A6%E4%B9%A0%E7%AC%94%E8%AE%B0/" class="article-date">
+	  <time datetime="2022-05-16T11:20:10.000Z" itemprop="datePublished">5月 16</time>
+	</a>
+</span>
+    
+    
+  <span class="article-tag">
+    <i class="icon icon-tags"></i>
+	<a class="article-tag-link-link" href="/tags/c-%E5%AD%A6%E4%B9%A0/" rel="tag">c++学习</a>
+  </span>
+
+
+    <span class="post-comment"><i class="icon icon-comment"></i> <a href="/2022/05/16/%E5%AD%A6%E4%B9%A0%E7%AC%94%E8%AE%B0/2022-05-16-C++%E5%AD%A6%E4%B9%A0%E7%AC%94%E8%AE%B0/#comments" class="article-comment-link">评论</a></span>
+    
+	
+		<span class="post-wordcount hidden-xs" itemprop="wordCount">字数统计: 411(字)</span>
+	
+	
+		<span class="post-readcount hidden-xs" itemprop="timeRequired">阅读时长: 1(分)</span>
+	
+
+  </p>
+</article>
+
+    
+      <article class="article article-type-post" itemscope itemtype="http://schema.org/BlogPosting">
+  <div class="article-header">
+    
+  
+    <h1 itemprop="name">
+      <a class="article-title" href="/2022/05/16/%E5%AD%A6%E4%B9%A0%E7%AC%94%E8%AE%B0/c++%E9%94%99%E9%A2%98%E9%9B%86/">c++错题集</a>
+    </h1>
+  
+
+  </div>
+  
+  <p class="article-meta">
+    <span class="article-date">
+    <i class="icon icon-calendar-check"></i>
+	<a href="/2022/05/16/%E5%AD%A6%E4%B9%A0%E7%AC%94%E8%AE%B0/c++%E9%94%99%E9%A2%98%E9%9B%86/" class="article-date">
+	  <time datetime="2022-05-16T11:20:10.000Z" itemprop="datePublished">5月 16</time>
+	</a>
+</span>
+    
+    
+  <span class="article-tag">
+    <i class="icon icon-tags"></i>
+	<a class="article-tag-link-link" href="/tags/c/" rel="tag">c++</a>
+  </span>
+
+
+    <span class="post-comment"><i class="icon icon-comment"></i> <a href="/2022/05/16/%E5%AD%A6%E4%B9%A0%E7%AC%94%E8%AE%B0/c++%E9%94%99%E9%A2%98%E9%9B%86/#comments" class="article-comment-link">评论</a></span>
+    
+	
+		<span class="post-wordcount hidden-xs" itemprop="wordCount">字数统计: 340(字)</span>
+	
+	
+		<span class="post-readcount hidden-xs" itemprop="timeRequired">阅读时长: 1(分)</span>
+	
+
+  </p>
+</article>
+
+    
+      <article class="article article-type-post" itemscope itemtype="http://schema.org/BlogPosting">
+  <div class="article-header">
+    
+  
+    <h1 itemprop="name">
+      <a class="article-title" href="/2022/05/16/%E5%AD%A6%E4%B9%A0%E7%AC%94%E8%AE%B0/DFS%EF%BC%8CBFS/">DFS BFS 在迷宫题中的运用</a>
+    </h1>
+  
+
+  </div>
+  
+  <p class="article-meta">
+    <span class="article-date">
+    <i class="icon icon-calendar-check"></i>
+	<a href="/2022/05/16/%E5%AD%A6%E4%B9%A0%E7%AC%94%E8%AE%B0/DFS%EF%BC%8CBFS/" class="article-date">
+	  <time datetime="2022-05-16T11:20:10.000Z" itemprop="datePublished">5月 16</time>
+	</a>
+</span>
+    
+    
+  <span class="article-tag">
+    <i class="icon icon-tags"></i>
+	<a class="article-tag-link-link" href="/tags/%E7%AE%97%E6%B3%95%E5%AD%A6%E4%B9%A0/" rel="tag">算法学习</a>
+  </span>
+
+
+    <span class="post-comment"><i class="icon icon-comment"></i> <a href="/2022/05/16/%E5%AD%A6%E4%B9%A0%E7%AC%94%E8%AE%B0/DFS%EF%BC%8CBFS/#comments" class="article-comment-link">评论</a></span>
+    
+	
+		<span class="post-wordcount hidden-xs" itemprop="wordCount">字数统计: 65(字)</span>
+	
+	
+		<span class="post-readcount hidden-xs" itemprop="timeRequired">阅读时长: 1(分)</span>
+	
+
+  </p>
+</article>
+
+    
+      <article class="article article-type-post" itemscope itemtype="http://schema.org/BlogPosting">
+  <div class="article-header">
+    
+  
+    <h1 itemprop="name">
+      <a class="article-title" href="/2022/05/16/%E9%80%86%E5%90%91/2022Sloth%E9%80%89%E6%8B%94%E8%B5%9B/">2022Sloth选拔赛</a>
+    </h1>
+  
+
+  </div>
+  
+  <p class="article-meta">
+    <span class="article-date">
+    <i class="icon icon-calendar-check"></i>
+	<a href="/2022/05/16/%E9%80%86%E5%90%91/2022Sloth%E9%80%89%E6%8B%94%E8%B5%9B/" class="article-date">
+	  <time datetime="2022-05-16T07:20:10.000Z" itemprop="datePublished">5月 16</time>
+	</a>
+</span>
+    
+    
+  <span class="article-tag">
+    <i class="icon icon-tags"></i>
+	<a class="article-tag-link-link" href="/tags/%E9%80%86%E5%90%91/" rel="tag">逆向</a>
+  </span>
+
+
+    <span class="post-comment"><i class="icon icon-comment"></i> <a href="/2022/05/16/%E9%80%86%E5%90%91/2022Sloth%E9%80%89%E6%8B%94%E8%B5%9B/#comments" class="article-comment-link">评论</a></span>
+    
+	
+		<span class="post-wordcount hidden-xs" itemprop="wordCount">字数统计: 1.8k(字)</span>
+	
+	
+		<span class="post-readcount hidden-xs" itemprop="timeRequired">阅读时长: 10(分)</span>
+	
+
+  </p>
+</article>
+
+    
+      <article class="article article-type-post" itemscope itemtype="http://schema.org/BlogPosting">
+  <div class="article-header">
+    
+  
+    <h1 itemprop="name">
+      <a class="article-title" href="/2022/05/15/%E9%80%86%E5%90%91/re_SMC/">SMC</a>
+    </h1>
+  
+
+  </div>
+  
+  <p class="article-meta">
+    <span class="article-date">
+    <i class="icon icon-calendar-check"></i>
+	<a href="/2022/05/15/%E9%80%86%E5%90%91/re_SMC/" class="article-date">
+	  <time datetime="2022-05-15T13:20:10.000Z" itemprop="datePublished">5月 15</time>
+	</a>
+</span>
+    
+    
+  <span class="article-tag">
+    <i class="icon icon-tags"></i>
+	<a class="article-tag-link-link" href="/tags/%E9%80%86%E5%90%91/" rel="tag">逆向</a>
+  </span>
+
+
+    <span class="post-comment"><i class="icon icon-comment"></i> <a href="/2022/05/15/%E9%80%86%E5%90%91/re_SMC/#comments" class="article-comment-link">评论</a></span>
+    
+	
+		<span class="post-wordcount hidden-xs" itemprop="wordCount">字数统计: 1.2k(字)</span>
+	
+	
+		<span class="post-readcount hidden-xs" itemprop="timeRequired">阅读时长: 5(分)</span>
+	
+
+  </p>
+</article>
+
+    
+      <article class="article article-type-post" itemscope itemtype="http://schema.org/BlogPosting">
+  <div class="article-header">
+    
+  
+    <h1 itemprop="name">
+      <a class="article-title" href="/2022/05/14/%E9%80%86%E5%90%91/2022514%20RE%E4%BA%A4%E6%B5%81/">控制流平坦化</a>
+    </h1>
+  
+
+  </div>
+  
+  <p class="article-meta">
+    <span class="article-date">
+    <i class="icon icon-calendar-check"></i>
+	<a href="/2022/05/14/%E9%80%86%E5%90%91/2022514%20RE%E4%BA%A4%E6%B5%81/" class="article-date">
+	  <time datetime="2022-05-14T03:20:10.000Z" itemprop="datePublished">5月 14</time>
+	</a>
+</span>
+    
+    
+  <span class="article-tag">
+    <i class="icon icon-tags"></i>
+	<a class="article-tag-link-link" href="/tags/%E9%80%86%E5%90%91/" rel="tag">逆向</a>
+  </span>
+
+
+    <span class="post-comment"><i class="icon icon-comment"></i> <a href="/2022/05/14/%E9%80%86%E5%90%91/2022514%20RE%E4%BA%A4%E6%B5%81/#comments" class="article-comment-link">评论</a></span>
+    
+	
+		<span class="post-wordcount hidden-xs" itemprop="wordCount">字数统计: 525(字)</span>
+	
+	
+		<span class="post-readcount hidden-xs" itemprop="timeRequired">阅读时长: 2(分)</span>
+	
+
+  </p>
+</article>
+
+    
+  </div>
+
+  
+    
+    <nav class="bar bar-footer clearfix" data-stick-bottom>
+        <div class="bar-inner">
+        <ul class="pager pull-left">
+            
+            <li class="prev disabled">
+                <a href="javascript:;">
+                    <i class="icon icon-angle-left"></i>
+                    上一页
+                </a>
+            </li>
+            
+            
+            <li class="next">
+                <a href="/page/2/">
+                    下一页
+                    <i class="icon icon-angle-right"></i>
+                </a>
+            </li>
+            
+        </ul>
+            <div class="total-article bar-right">Page 1 of 2</div>
+        </div>
+    </nav>
+    
+ 
+</main>
+
+  <footer class="footer" itemscope itemtype="http://schema.org/WPFooter">
+	
+	
+    <ul class="social-links">
+    	
+        <li><a href="https://github.com/cofess" target="_blank" title="Github" data-toggle=tooltip data-placement=top><i class="icon icon-github"></i></a></li>
+        
+        <li><a href="http://weibo.com/cofess" target="_blank" title="Weibo" data-toggle=tooltip data-placement=top><i class="icon icon-weibo"></i></a></li>
+        
+        <li><a href="https://twitter.com/iwebued" target="_blank" title="Twitter" data-toggle=tooltip data-placement=top><i class="icon icon-twitter"></i></a></li>
+        
+        <li><a href="https://www.behance.net/cofess" target="_blank" title="Behance" data-toggle=tooltip data-placement=top><i class="icon icon-behance"></i></a></li>
+        
+        <li><a href="/atom.xml" target="_blank" title="Rss" data-toggle=tooltip data-placement=top><i class="icon icon-rss"></i></a></li>
+        
+    </ul>
+
+    <div class="copyright">
+    	
+        <div class="publishby">
+        	Theme by <a href="https://github.com/cofess" target="_blank"> cofess </a>base on <a href="https://github.com/cofess/hexo-theme-pure" target="_blank">pure</a>.
+        </div>
+    </div>
+</footer>
+  <script src="//cdn.jsdelivr.net/npm/jquery@1.12.4/dist/jquery.min.js"></script>
+<script>
+window.jQuery || document.write('<script src="js/jquery.min.js"><\/script>')
+</script>
+
+<script src="/js/plugin.min.js"></script>
+
+
+<script src="/js/application.js"></script>
+
+
+    <script>
+(function (window) {
+    var INSIGHT_CONFIG = {
+        TRANSLATION: {
+            POSTS: '文章',
+            PAGES: '页面',
+            CATEGORIES: '分类',
+            TAGS: '标签',
+            UNTITLED: '(未命名)',
+        },
+        ROOT_URL: '/',
+        CONTENT_URL: '/content.json',
+    };
+    window.INSIGHT_CONFIG = INSIGHT_CONFIG;
+})(window);
+</script>
+
+<script src="/js/insight.js"></script>
+
+
+
+
+
+
+   
+
+
+
+
+
+
+
+
+
+</body>
+</html>
