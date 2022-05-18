@@ -1,0 +1,595 @@
+<!DOCTYPE html>
+<html lang=zh>
+<head>
+  <meta charset="utf-8">
+  
+  <meta http-equiv="X-UA-Compatible" content="IE=edge,chrome=1">
+  <meta name="viewport" content="width=device-width, initial-scale=1, maximum-scale=1, minimum-scale=1, user-scalable=no, minimal-ui">
+  <meta name="renderer" content="webkit">
+  <meta http-equiv="Cache-Control" content="no-transform" />
+  <meta http-equiv="Cache-Control" content="no-siteapp" />
+  <meta name="apple-mobile-web-app-capable" content="yes">
+  <meta name="apple-mobile-web-app-status-bar-style" content="black">
+  <meta name="format-detection" content="telephone=no,email=no,adress=no">
+  <!-- Color theme for statusbar -->
+  <meta name="theme-color" content="#000000" />
+  <!-- 强制页面在当前窗口以独立页面显示,防止别人在框架里调用页面 -->
+  <meta http-equiv="window-target" content="_top" />
+  
+  
+  <title>2018安恒赛 9月 | Hexo</title>
+  <meta name="description" content="2018年安恒杯RENewDriver   先找密文  进一个关键函数  猜一手base64，发现被魔改了。  动态调试了一下，发现函数恢复了 逻辑判断一下 先对flag进行base64加密 然后对a2进行操作，可以动态调出a1的值，key&#x3D;a1 然后拿着key和加密后的flag进行操作  RC4加密  12345678910111213141516171819202122232425262728">
+<meta property="og:type" content="article">
+<meta property="og:title" content="2018安恒赛 9月">
+<meta property="og:url" content="http://example.com/2022/05/19/2018%E5%AE%89%E6%81%92%E8%B5%9B-9%E6%9C%88/index.html">
+<meta property="og:site_name" content="Topdog的博客">
+<meta property="og:description" content="2018年安恒杯RENewDriver   先找密文  进一个关键函数  猜一手base64，发现被魔改了。  动态调试了一下，发现函数恢复了 逻辑判断一下 先对flag进行base64加密 然后对a2进行操作，可以动态调出a1的值，key&#x3D;a1 然后拿着key和加密后的flag进行操作  RC4加密  12345678910111213141516171819202122232425262728">
+<meta property="og:locale" content="zh_CN">
+<meta property="og:image" content="https://test-1311941730.cos.ap-nanjing.myqcloud.com/image-20220518232222832.png">
+<meta property="og:image" content="https://test-1311941730.cos.ap-nanjing.myqcloud.com/image-20220518232253211.png">
+<meta property="og:image" content="https://test-1311941730.cos.ap-nanjing.myqcloud.com/image-20220518234004594.png">
+<meta property="og:image" content="https://test-1311941730.cos.ap-nanjing.myqcloud.com/image-20220518234052923.png">
+<meta property="og:image" content="https://test-1311941730.cos.ap-nanjing.myqcloud.com/image-20220518235329089.png">
+<meta property="og:image" content="https://test-1311941730.cos.ap-nanjing.myqcloud.com/image-20220519003128214.png">
+<meta property="og:image" content="https://test-1311941730.cos.ap-nanjing.myqcloud.com/image-20220519002941566.png">
+<meta property="og:image" content="https://test-1311941730.cos.ap-nanjing.myqcloud.com/image-20220519002625257.png">
+<meta property="og:image" content="https://test-1311941730.cos.ap-nanjing.myqcloud.com/image-20220519003424333.png">
+<meta property="og:image" content="https://test-1311941730.cos.ap-nanjing.myqcloud.com/image-20220519003719605.png">
+<meta property="article:published_time" content="2022-05-18T16:38:09.000Z">
+<meta property="article:modified_time" content="2022-05-18T16:38:42.632Z">
+<meta property="article:author" content="雨后初霁">
+<meta property="article:tag" content="逆向">
+<meta name="twitter:card" content="summary">
+<meta name="twitter:image" content="https://test-1311941730.cos.ap-nanjing.myqcloud.com/image-20220518232222832.png">
+  <!-- Canonical links -->
+  <link rel="canonical" href="http://example.com/2022/05/19/2018%E5%AE%89%E6%81%92%E8%B5%9B-9%E6%9C%88/index.html">
+  
+    <link rel="alternate" href="/atom.xml" title="Topdog的博客" type="application/atom+xml">
+  
+  
+    <link rel="icon" href="/favicon.png" type="image/x-icon">
+  
+  
+<link rel="stylesheet" href="/css/style.css">
+
+  
+  
+  
+  
+<meta name="generator" content="Hexo 5.4.2"></head>
+
+
+<body class="main-center" itemscope itemtype="http://schema.org/WebPage">
+  <header class="header" itemscope itemtype="http://schema.org/WPHeader">
+  <div class="slimContent">
+    <div class="navbar-header">
+      
+      
+      <div class="profile-block text-center">
+        <a id="avatar" href="https://github.com/maxchost?tab=repositories" target="_blank">
+          <img class="img-circle img-rotate" src="https://test-1311941730.cos.ap-nanjing.myqcloud.com/@){U79_SH1QT}Y`MVG~0_E3.jpg" width="200" height="200">
+        </a>
+        <h2 id="name" class="hidden-xs hidden-sm">雨后初霁</h2>
+        <h3 id="title" class="hidden-xs hidden-sm hidden-md">心有猛虎，细嗅蔷薇。</h3>
+        <small id="location" class="text-muted hidden-xs hidden-sm"><i class="icon icon-map-marker"></i> WuHan, China</small>
+      </div>
+      
+      <div class="search" id="search-form-wrap">
+
+    <form class="search-form sidebar-form">
+        <div class="input-group">
+            <input type="text" class="search-form-input form-control" placeholder="搜索" />
+            <span class="input-group-btn">
+                <button type="submit" class="search-form-submit btn btn-flat" onclick="return false;"><i class="icon icon-search"></i></button>
+            </span>
+        </div>
+    </form>
+    <div class="ins-search">
+  <div class="ins-search-mask"></div>
+  <div class="ins-search-container">
+    <div class="ins-input-wrapper">
+      <input type="text" class="ins-search-input" placeholder="想要查找什么..." x-webkit-speech />
+      <button type="button" class="close ins-close ins-selectable" data-dismiss="modal" aria-label="Close"><span aria-hidden="true">×</span></button>
+    </div>
+    <div class="ins-section-wrapper">
+      <div class="ins-section-container"></div>
+    </div>
+  </div>
+</div>
+
+
+</div>
+      <button class="navbar-toggle collapsed" type="button" data-toggle="collapse" data-target="#main-navbar" aria-controls="main-navbar" aria-expanded="false">
+        <span class="sr-only">Toggle navigation</span>
+        <span class="icon-bar"></span>
+        <span class="icon-bar"></span>
+        <span class="icon-bar"></span>
+      </button>
+    </div>
+    <nav id="main-navbar" class="collapse navbar-collapse" itemscope itemtype="http://schema.org/SiteNavigationElement" role="navigation">
+      <ul class="nav navbar-nav main-nav ">
+        
+        
+        <li class="menu-item menu-item-home">
+          <a href="/.">
+            
+            <i class="icon icon-home-fill"></i>
+            
+            <span class="menu-title">首页</span>
+          </a>
+        </li>
+        
+        
+        <li class="menu-item menu-item-archives">
+          <a href="/archives">
+            
+            <i class="icon icon-archives-fill"></i>
+            
+            <span class="menu-title">归档</span>
+          </a>
+        </li>
+        
+        
+        <li class="menu-item menu-item-categories">
+          <a href="/categories">
+            
+            <i class="icon icon-folder"></i>
+            
+            <span class="menu-title">分类</span>
+          </a>
+        </li>
+        
+        
+        <li class="menu-item menu-item-tags">
+          <a href="/tags">
+            
+            <i class="icon icon-tags"></i>
+            
+            <span class="menu-title">标签</span>
+          </a>
+        </li>
+        
+        
+        <li class="menu-item menu-item-repository">
+          <a href="/repository">
+            
+            <i class="icon icon-project"></i>
+            
+            <span class="menu-title">项目</span>
+          </a>
+        </li>
+        
+        
+        <li class="menu-item menu-item-books">
+          <a href="/books">
+            
+            <i class="icon icon-book-fill"></i>
+            
+            <span class="menu-title">书单</span>
+          </a>
+        </li>
+        
+        
+        <li class="menu-item menu-item-links">
+          <a href="/links">
+            
+            <i class="icon icon-friendship"></i>
+            
+            <span class="menu-title">友链</span>
+          </a>
+        </li>
+        
+        
+        <li class="menu-item menu-item-about">
+          <a href="/about">
+            
+            <i class="icon icon-cup-fill"></i>
+            
+            <span class="menu-title">关于</span>
+          </a>
+        </li>
+        
+      </ul>
+      
+	
+    <ul class="social-links">
+    	
+        <li><a href="https://github.com/cofess" target="_blank" title="Github" data-toggle=tooltip data-placement=top><i class="icon icon-github"></i></a></li>
+        
+        <li><a href="http://weibo.com/cofess" target="_blank" title="Weibo" data-toggle=tooltip data-placement=top><i class="icon icon-weibo"></i></a></li>
+        
+        <li><a href="https://twitter.com/iwebued" target="_blank" title="Twitter" data-toggle=tooltip data-placement=top><i class="icon icon-twitter"></i></a></li>
+        
+        <li><a href="https://www.behance.net/cofess" target="_blank" title="Behance" data-toggle=tooltip data-placement=top><i class="icon icon-behance"></i></a></li>
+        
+        <li><a href="/atom.xml" target="_blank" title="Rss" data-toggle=tooltip data-placement=top><i class="icon icon-rss"></i></a></li>
+        
+    </ul>
+
+    </nav>
+  </div>
+</header>
+
+  
+    <aside class="sidebar" itemscope itemtype="http://schema.org/WPSideBar">
+  <div class="slimContent">
+    
+      <div class="widget">
+    <h3 class="widget-title">公告</h3>
+    <div class="widget-body">
+        <div id="board">
+            <div class="content">
+                <p>欢迎交流与分享经验!</p>
+            </div>
+        </div>
+    </div>
+</div>
+
+    
+      
+
+    
+      
+  <div class="widget">
+    <h3 class="widget-title">标签</h3>
+    <div class="widget-body">
+      <ul class="tag-list" itemprop="keywords"><li class="tag-list-item"><a class="tag-list-link" href="/tags/c/" rel="tag">c++</a><span class="tag-list-count">5</span></li><li class="tag-list-item"><a class="tag-list-link" href="/tags/c-%E5%AD%A6%E4%B9%A0/" rel="tag">c++学习</a><span class="tag-list-count">2</span></li><li class="tag-list-item"><a class="tag-list-link" href="/tags/%E5%AD%A6%E4%B9%A0%E7%AC%94%E8%AE%B0/" rel="tag">学习笔记</a><span class="tag-list-count">1</span></li><li class="tag-list-item"><a class="tag-list-link" href="/tags/%E7%AE%97%E6%B3%95%E5%AD%A6%E4%B9%A0/" rel="tag">算法学习</a><span class="tag-list-count">1</span></li><li class="tag-list-item"><a class="tag-list-link" href="/tags/%E9%80%86%E5%90%91/" rel="tag">逆向</a><span class="tag-list-count">7</span></li></ul>
+    </div>
+  </div>
+
+
+    
+      
+  <div class="widget">
+    <h3 class="widget-title">标签云</h3>
+    <div class="widget-body tagcloud">
+      <a href="/tags/c/" style="font-size: 13.67px;">c++</a> <a href="/tags/c-%E5%AD%A6%E4%B9%A0/" style="font-size: 13.33px;">c++学习</a> <a href="/tags/%E5%AD%A6%E4%B9%A0%E7%AC%94%E8%AE%B0/" style="font-size: 13px;">学习笔记</a> <a href="/tags/%E7%AE%97%E6%B3%95%E5%AD%A6%E4%B9%A0/" style="font-size: 13px;">算法学习</a> <a href="/tags/%E9%80%86%E5%90%91/" style="font-size: 14px;">逆向</a>
+    </div>
+  </div>
+
+    
+      
+  <div class="widget">
+    <h3 class="widget-title">归档</h3>
+    <div class="widget-body">
+      <ul class="archive-list"><li class="archive-list-item"><a class="archive-list-link" href="/archives/2022/05/">五月 2022</a><span class="archive-list-count">15</span></li><li class="archive-list-item"><a class="archive-list-link" href="/archives/2022/03/">三月 2022</a><span class="archive-list-count">1</span></li></ul>
+    </div>
+  </div>
+
+
+    
+      
+  <div class="widget">
+    <h3 class="widget-title">最新文章</h3>
+    <div class="widget-body">
+      <ul class="recent-post-list list-unstyled no-thumbnail">
+        
+          <li>
+            
+            <div class="item-inner">
+              <p class="item-category">
+                
+              </p>
+              <p class="item-title">
+                <a href="/2022/05/19/2018%E5%AE%89%E6%81%92%E8%B5%9B-9%E6%9C%88/" class="title">2018安恒赛 9月</a>
+              </p>
+              <p class="item-date">
+                <time datetime="2022-05-18T16:38:09.000Z" itemprop="datePublished">2022-05-19</time>
+              </p>
+            </div>
+          </li>
+          
+          <li>
+            
+            <div class="item-inner">
+              <p class="item-category">
+                
+              </p>
+              <p class="item-title">
+                <a href="/2022/05/18/vm%E9%80%86%E5%90%91/" class="title">vm逆向</a>
+              </p>
+              <p class="item-date">
+                <time datetime="2022-05-18T06:56:57.000Z" itemprop="datePublished">2022-05-18</time>
+              </p>
+            </div>
+          </li>
+          
+          <li>
+            
+            <div class="item-inner">
+              <p class="item-category">
+                
+              </p>
+              <p class="item-title">
+                <a href="/2022/05/18/2021Sloth%E9%80%89%E6%8B%94%E8%B5%9B/" class="title">2021Sloth选拔赛</a>
+              </p>
+              <p class="item-date">
+                <time datetime="2022-05-18T02:16:51.000Z" itemprop="datePublished">2022-05-18</time>
+              </p>
+            </div>
+          </li>
+          
+          <li>
+            
+            <div class="item-inner">
+              <p class="item-category">
+                
+              </p>
+              <p class="item-title">
+                <a href="/2022/05/18/%E5%B8%B8%E8%A7%81%E8%8A%B1%E6%8C%87%E4%BB%A4/" class="title">常见花指令</a>
+              </p>
+              <p class="item-date">
+                <time datetime="2022-05-17T16:01:52.000Z" itemprop="datePublished">2022-05-18</time>
+              </p>
+            </div>
+          </li>
+          
+          <li>
+            
+            <div class="item-inner">
+              <p class="item-category">
+                
+              </p>
+              <p class="item-title">
+                <a href="/2022/05/17/%E5%8D%8E%E5%B8%88CTF-hsCTF2021-re%E9%83%A8%E5%88%86%E9%A2%98%E8%A7%A3/" class="title">华师CTF--hsCTF2021 re部分题解</a>
+              </p>
+              <p class="item-date">
+                <time datetime="2022-05-17T12:57:37.000Z" itemprop="datePublished">2022-05-17</time>
+              </p>
+            </div>
+          </li>
+          
+      </ul>
+    </div>
+  </div>
+  
+
+    
+  </div>
+</aside>
+
+  
+  
+<main class="main" role="main">
+  <div class="content">
+  <article id="post-2018安恒赛-9月" class="article article-type-post" itemscope itemtype="http://schema.org/BlogPosting">
+    
+    <div class="article-header">
+      
+        
+  
+    <h1 class="article-title" itemprop="name">
+      2018安恒赛 9月
+    </h1>
+  
+
+      
+      <div class="article-meta">
+        <span class="article-date">
+    <i class="icon icon-calendar-check"></i>
+	<a href="/2022/05/19/2018%E5%AE%89%E6%81%92%E8%B5%9B-9%E6%9C%88/" class="article-date">
+	  <time datetime="2022-05-18T16:38:09.000Z" itemprop="datePublished">2022-05-19</time>
+	</a>
+</span>
+        
+        
+  <span class="article-tag">
+    <i class="icon icon-tags"></i>
+	<a class="article-tag-link-link" href="/tags/%E9%80%86%E5%90%91/" rel="tag">逆向</a>
+  </span>
+
+
+        
+
+        <span class="post-comment"><i class="icon icon-comment"></i> <a href="/2022/05/19/2018%E5%AE%89%E6%81%92%E8%B5%9B-9%E6%9C%88/#comments" class="article-comment-link">评论</a></span>
+        
+	
+		<span class="post-wordcount hidden-xs" itemprop="wordCount">字数统计: 451(字)</span>
+	
+	
+		<span class="post-readcount hidden-xs" itemprop="timeRequired">阅读时长: 2(分)</span>
+	
+
+      </div>
+    </div>
+    <div class="article-entry marked-body" itemprop="articleBody">
+      
+        <h1 id="2018年安恒杯RE"><a href="#2018年安恒杯RE" class="headerlink" title="2018年安恒杯RE"></a>2018年安恒杯RE</h1><p>NewDriver</p>
+<p><img src="https://test-1311941730.cos.ap-nanjing.myqcloud.com/image-20220518232222832.png" alt="image-20220518232222832"></p>
+<p><img src="https://test-1311941730.cos.ap-nanjing.myqcloud.com/image-20220518232253211.png" alt="image-20220518232253211"></p>
+<p>先找密文</p>
+<p><img src="https://test-1311941730.cos.ap-nanjing.myqcloud.com/image-20220518234004594.png" alt="image-20220518234004594"></p>
+<p>进一个关键函数</p>
+<p><img src="https://test-1311941730.cos.ap-nanjing.myqcloud.com/image-20220518234052923.png" alt="image-20220518234052923"></p>
+<p>猜一手base64，发现被魔改了。</p>
+<p><img src="https://test-1311941730.cos.ap-nanjing.myqcloud.com/image-20220518235329089.png" alt="image-20220518235329089"></p>
+<p>动态调试了一下，发现函数恢复了</p>
+<p>逻辑判断一下</p>
+<p>先对flag进行base64加密</p>
+<p>然后对a2进行操作，可以动态调出a1的值，key=a1</p>
+<p>然后拿着key和加密后的flag进行操作</p>
+<p><img src="https://test-1311941730.cos.ap-nanjing.myqcloud.com/image-20220519003128214.png" alt="image-20220519003128214"></p>
+<p>RC4加密</p>
+<p><img src="https://test-1311941730.cos.ap-nanjing.myqcloud.com/image-20220519002941566.png" alt="image-20220519002941566"></p>
+<figure class="highlight python"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br><span class="line">13</span><br><span class="line">14</span><br><span class="line">15</span><br><span class="line">16</span><br><span class="line">17</span><br><span class="line">18</span><br><span class="line">19</span><br><span class="line">20</span><br><span class="line">21</span><br><span class="line">22</span><br><span class="line">23</span><br><span class="line">24</span><br><span class="line">25</span><br><span class="line">26</span><br><span class="line">27</span><br><span class="line">28</span><br><span class="line">29</span><br><span class="line">30</span><br><span class="line">31</span><br><span class="line">32</span><br><span class="line">33</span><br><span class="line">34</span><br><span class="line">35</span><br><span class="line">36</span><br><span class="line">37</span><br><span class="line">38</span><br><span class="line">39</span><br><span class="line">40</span><br><span class="line">41</span><br><span class="line">42</span><br><span class="line">43</span><br></pre></td><td class="code"><pre><span class="line">key=[<span class="number">102</span>,  <span class="number">50</span>, <span class="number">202</span>, <span class="number">160</span>, <span class="number">191</span>, <span class="number">152</span>,  <span class="number">45</span>, <span class="number">118</span>, <span class="number">241</span>,  <span class="number">89</span>, </span><br><span class="line">   <span class="number">42</span>,  <span class="number">74</span>, <span class="number">244</span>,  <span class="number">48</span>, <span class="number">173</span>, <span class="number">210</span>,  <span class="number">29</span>,   <span class="number">2</span>, <span class="number">216</span>,  <span class="number">35</span>, </span><br><span class="line">  <span class="number">137</span>,  <span class="number">93</span>, <span class="number">131</span>,  <span class="number">56</span>,   <span class="number">9</span>, <span class="number">242</span>, <span class="number">116</span>, <span class="number">101</span>,  <span class="number">64</span>,  <span class="number">25</span>, </span><br><span class="line">  <span class="number">198</span>, <span class="number">221</span>,  <span class="number">24</span>, <span class="number">211</span>, <span class="number">143</span>, <span class="number">108</span>, <span class="number">139</span>, <span class="number">192</span>, <span class="number">197</span>,  <span class="number">84</span>, </span><br><span class="line">   <span class="number">46</span>, <span class="number">129</span>,  <span class="number">16</span>, <span class="number">196</span>,  <span class="number">38</span>,  <span class="number">86</span>,  <span class="number">95</span>,  <span class="number">83</span>, <span class="number">128</span>,  <span class="number">67</span>, </span><br><span class="line">   <span class="number">39</span>,  <span class="number">98</span>, <span class="number">234</span>,  <span class="number">61</span>, <span class="number">230</span>,   <span class="number">0</span>, <span class="number">231</span>, <span class="number">183</span>,  <span class="number">80</span>, <span class="number">148</span>, </span><br><span class="line">  <span class="number">144</span>,  <span class="number">76</span>,  <span class="number">63</span>, <span class="number">157</span>,   <span class="number">7</span>, <span class="number">224</span>, <span class="number">163</span>, <span class="number">156</span>,  <span class="number">78</span>,  <span class="number">15</span>, </span><br><span class="line">  <span class="number">159</span>, <span class="number">254</span>,  <span class="number">91</span>, <span class="number">142</span>, <span class="number">222</span>, <span class="number">136</span>, <span class="number">114</span>,  <span class="number">47</span>, <span class="number">193</span>, <span class="number">103</span>, </span><br><span class="line">   <span class="number">49</span>, <span class="number">112</span>, <span class="number">141</span>, <span class="number">253</span>, <span class="number">190</span>, <span class="number">100</span>, <span class="number">195</span>, <span class="number">189</span>, <span class="number">107</span>, <span class="number">122</span>, </span><br><span class="line">  <span class="number">207</span>,  <span class="number">12</span>,  <span class="number">52</span>,  <span class="number">31</span>, <span class="number">111</span>,   <span class="number">1</span>, <span class="number">240</span>, <span class="number">124</span>,  <span class="number">94</span>, <span class="number">164</span>, </span><br><span class="line">   <span class="number">30</span>,  <span class="number">73</span>, <span class="number">140</span>, <span class="number">117</span>,  <span class="number">28</span>, <span class="number">227</span>,  <span class="number">32</span>,  <span class="number">72</span>,  <span class="number">40</span>, <span class="number">121</span>, </span><br><span class="line">  <span class="number">165</span>, <span class="number">127</span>, <span class="number">245</span>, <span class="number">236</span>,  <span class="number">79</span>, <span class="number">120</span>,  <span class="number">88</span>,  <span class="number">17</span>, <span class="number">247</span>, <span class="number">205</span>, </span><br><span class="line">  <span class="number">145</span>,  <span class="number">19</span>, <span class="number">252</span>, <span class="number">184</span>,  <span class="number">44</span>,   <span class="number">4</span>, <span class="number">238</span>, <span class="number">213</span>,   <span class="number">8</span>,  <span class="number">68</span>, </span><br><span class="line">  <span class="number">169</span>, <span class="number">225</span>, <span class="number">177</span>,  <span class="number">66</span>, <span class="number">132</span>,  <span class="number">41</span>, <span class="number">167</span>,  <span class="number">71</span>, <span class="number">151</span>, <span class="number">126</span>, </span><br><span class="line">  <span class="number">232</span>, <span class="number">179</span>,  <span class="number">96</span>,  <span class="number">11</span>, <span class="number">249</span>,  <span class="number">75</span>,  <span class="number">60</span>, <span class="number">119</span>,  <span class="number">23</span>,   <span class="number">3</span>, </span><br><span class="line">  <span class="number">130</span>, <span class="number">105</span>, <span class="number">135</span>, <span class="number">212</span>, <span class="number">149</span>,  <span class="number">26</span>,  <span class="number">51</span>,  <span class="number">37</span>, <span class="number">110</span>, <span class="number">204</span>, </span><br><span class="line">  <span class="number">214</span>, <span class="number">187</span>, <span class="number">153</span>, <span class="number">176</span>, <span class="number">133</span>,  <span class="number">65</span>, <span class="number">178</span>,  <span class="number">13</span>, <span class="number">219</span>,  <span class="number">53</span>, </span><br><span class="line">   <span class="number">59</span>,  <span class="number">92</span>, <span class="number">248</span>, <span class="number">237</span>, <span class="number">158</span>, <span class="number">166</span>, <span class="number">150</span>,  <span class="number">57</span>,  <span class="number">99</span>,  <span class="number">10</span>, </span><br><span class="line">   <span class="number">27</span>, <span class="number">147</span>,  <span class="number">33</span>,  <span class="number">70</span>,  <span class="number">18</span>, <span class="number">208</span>, <span class="number">180</span>,  <span class="number">34</span>,  <span class="number">81</span>, <span class="number">201</span>, </span><br><span class="line">   <span class="number">97</span>, <span class="number">209</span>,  <span class="number">43</span>, <span class="number">170</span>,  <span class="number">69</span>,   <span class="number">6</span>,   <span class="number">5</span>, <span class="number">206</span>, <span class="number">250</span>, <span class="number">146</span>, </span><br><span class="line">  <span class="number">104</span>, <span class="number">171</span>,  <span class="number">54</span>, <span class="number">218</span>, <span class="number">200</span>, <span class="number">226</span>,  <span class="number">55</span>, <span class="number">217</span>, <span class="number">162</span>,  <span class="number">90</span>, </span><br><span class="line">  <span class="number">215</span>, <span class="number">106</span>, <span class="number">181</span>, <span class="number">255</span>, <span class="number">233</span>, <span class="number">186</span>,  <span class="number">82</span>,  <span class="number">21</span>, <span class="number">246</span>, <span class="number">188</span>, </span><br><span class="line">  <span class="number">154</span>, <span class="number">182</span>, <span class="number">239</span>, <span class="number">109</span>, <span class="number">203</span>,  <span class="number">77</span>, <span class="number">174</span>, <span class="number">228</span>, <span class="number">161</span>, <span class="number">172</span>, </span><br><span class="line">  <span class="number">235</span>,  <span class="number">14</span>, <span class="number">113</span>, <span class="number">123</span>, <span class="number">243</span>,  <span class="number">36</span>, <span class="number">194</span>, <span class="number">251</span>, <span class="number">125</span>, <span class="number">134</span>, </span><br><span class="line">   <span class="number">85</span>, <span class="number">175</span>,  <span class="number">58</span>, <span class="number">223</span>,  <span class="number">62</span>,  <span class="number">20</span>, <span class="number">185</span>, <span class="number">155</span>,  <span class="number">22</span>, <span class="number">220</span>, </span><br><span class="line">  <span class="number">115</span>,  <span class="number">87</span>, <span class="number">229</span>, <span class="number">199</span>, <span class="number">138</span>, <span class="number">168</span>]</span><br><span class="line">enc=[<span class="number">32</span>, <span class="number">195</span>,  <span class="number">26</span>, <span class="number">174</span>, <span class="number">151</span>,  <span class="number">60</span>, <span class="number">122</span>,  <span class="number">65</span>, <span class="number">222</span>, <span class="number">246</span>, </span><br><span class="line">  <span class="number">120</span>,  <span class="number">21</span>, <span class="number">203</span>,  <span class="number">75</span>,  <span class="number">76</span>, <span class="number">220</span>,  <span class="number">38</span>,  <span class="number">85</span>, <span class="number">139</span>,  <span class="number">85</span>, </span><br><span class="line">  <span class="number">229</span>, <span class="number">233</span>,  <span class="number">85</span>, <span class="number">117</span>,  <span class="number">64</span>,  <span class="number">61</span>, <span class="number">130</span>,  <span class="number">19</span>, <span class="number">165</span>,  <span class="number">96</span>, </span><br><span class="line">   <span class="number">19</span>,  <span class="number">59</span>, <span class="number">245</span>, <span class="number">216</span>,  <span class="number">25</span>,  <span class="number">14</span>,  <span class="number">71</span>, <span class="number">207</span>,  <span class="number">95</span>,  <span class="number">94</span>, </span><br><span class="line">  <span class="number">222</span>, <span class="number">157</span>,  <span class="number">20</span>, <span class="number">189</span>]</span><br><span class="line">v4 = <span class="number">0</span></span><br><span class="line">enflag=<span class="string">&#x27;&#x27;</span></span><br><span class="line">v3 = <span class="number">0</span>;</span><br><span class="line"><span class="keyword">for</span> i <span class="keyword">in</span> <span class="built_in">range</span>(<span class="number">44</span>):</span><br><span class="line">    v3 = (v3 + <span class="number">1</span>) % <span class="number">256</span>;</span><br><span class="line">    v6 = key[v3];</span><br><span class="line">    v4 = (v6 + v4) % <span class="number">256</span>;</span><br><span class="line">    key[v3] = key[v4];</span><br><span class="line">    key[v4] = v6;</span><br><span class="line">    enc[i] = enc[i]^key[(v6+key[v3]) % <span class="number">256</span>];</span><br><span class="line">    enflag+=<span class="built_in">chr</span>(enc[i])</span><br><span class="line"><span class="built_in">print</span>(enflag)</span><br></pre></td></tr></table></figure>
+
+<p><img src="https://test-1311941730.cos.ap-nanjing.myqcloud.com/image-20220519002625257.png" alt="image-20220519002625257"></p>
+<p>flag{y0u_know_rc4_and_base64_ha$}</p>
+<p><img src="https://test-1311941730.cos.ap-nanjing.myqcloud.com/image-20220519003424333.png" alt="image-20220519003424333"></p>
+<p>下一题今天再做，有点晚了睡觉了，</p>
+<p><img src="https://test-1311941730.cos.ap-nanjing.myqcloud.com/image-20220519003719605.png" alt="image-20220519003719605"></p>
+
+      
+    </div>
+    <div class="article-footer">
+      <blockquote class="mt-2x">
+  <ul class="post-copyright list-unstyled">
+    
+    <li class="post-copyright-link hidden-xs">
+      <strong>本文链接：</strong>
+      <a href="http://example.com/2022/05/19/2018%E5%AE%89%E6%81%92%E8%B5%9B-9%E6%9C%88/" title="2018安恒赛 9月" target="_blank" rel="external">http://example.com/2022/05/19/2018安恒赛-9月/</a>
+    </li>
+    
+    <li class="post-copyright-license">
+      <strong>版权声明： </strong> 本博客所有文章除特别声明外，均采用 <a href="http://creativecommons.org/licenses/by/4.0/deed.zh" target="_blank" rel="external">CC BY 4.0 CN协议</a> 许可协议。转载请注明出处！
+    </li>
+  </ul>
+</blockquote>
+
+
+<div class="panel panel-default panel-badger">
+  <div class="panel-body">
+    <figure class="media">
+      <div class="media-left">
+        <a href="https://github.com/maxchost?tab=repositories" target="_blank" class="img-burn thumb-sm visible-lg">
+          <img src="https://test-1311941730.cos.ap-nanjing.myqcloud.com/@){U79_SH1QT}Y`MVG~0_E3.jpg" class="img-rounded w-full" alt="">
+        </a>
+      </div>
+      <div class="media-body">
+        <h3 class="media-heading"><a href="https://github.com/maxchost?tab=repositories" target="_blank"><span class="text-dark">雨后初霁</span><small class="ml-1x">心有猛虎，细嗅蔷薇。</small></a></h3>
+        <div>个人简介。</div>
+      </div>
+    </figure>
+  </div>
+</div>
+
+
+    </div>
+  </article>
+  
+    
+  <section id="comments">
+  	
+      <div id="vcomments"></div>
+    
+  </section>
+
+
+  
+</div>
+
+  <nav class="bar bar-footer clearfix" data-stick-bottom>
+  <div class="bar-inner">
+  
+  <ul class="pager pull-left">
+    
+    
+    <li class="next">
+      <a href="/2022/05/18/vm%E9%80%86%E5%90%91/" title="vm逆向"><span>下一篇&nbsp;&nbsp;</span><i class="icon icon-angle-right" aria-hidden="true"></i></a>
+    </li>
+    
+    
+  </ul>
+  
+  
+  
+  <div class="bar-right">
+    
+    <div class="share-component" data-sites="weibo,qq,wechat,facebook,twitter" data-mobile-sites="weibo,qq,qzone"></div>
+    
+  </div>
+  </div>
+</nav>
+  
+
+
+</main>
+
+  <footer class="footer" itemscope itemtype="http://schema.org/WPFooter">
+	
+	
+    <ul class="social-links">
+    	
+        <li><a href="https://github.com/cofess" target="_blank" title="Github" data-toggle=tooltip data-placement=top><i class="icon icon-github"></i></a></li>
+        
+        <li><a href="http://weibo.com/cofess" target="_blank" title="Weibo" data-toggle=tooltip data-placement=top><i class="icon icon-weibo"></i></a></li>
+        
+        <li><a href="https://twitter.com/iwebued" target="_blank" title="Twitter" data-toggle=tooltip data-placement=top><i class="icon icon-twitter"></i></a></li>
+        
+        <li><a href="https://www.behance.net/cofess" target="_blank" title="Behance" data-toggle=tooltip data-placement=top><i class="icon icon-behance"></i></a></li>
+        
+        <li><a href="/atom.xml" target="_blank" title="Rss" data-toggle=tooltip data-placement=top><i class="icon icon-rss"></i></a></li>
+        
+    </ul>
+
+    <div class="copyright">
+    	
+        <div class="publishby">
+        	Theme by <a href="https://github.com/cofess" target="_blank"> cofess </a>base on <a href="https://github.com/cofess/hexo-theme-pure" target="_blank">pure</a>.
+        </div>
+    </div>
+</footer>
+  <script src="//cdn.jsdelivr.net/npm/jquery@1.12.4/dist/jquery.min.js"></script>
+<script>
+window.jQuery || document.write('<script src="js/jquery.min.js"><\/script>')
+</script>
+
+<script src="/js/plugin.min.js"></script>
+
+
+<script src="/js/application.js"></script>
+
+
+    <script>
+(function (window) {
+    var INSIGHT_CONFIG = {
+        TRANSLATION: {
+            POSTS: '文章',
+            PAGES: '页面',
+            CATEGORIES: '分类',
+            TAGS: '标签',
+            UNTITLED: '(未命名)',
+        },
+        ROOT_URL: '/',
+        CONTENT_URL: '/content.json',
+    };
+    window.INSIGHT_CONFIG = INSIGHT_CONFIG;
+})(window);
+</script>
+
+<script src="/js/insight.js"></script>
+
+
+
+
+
+
+   
+
+
+
+
+   
+    
+  <script src="//cdn1.lncld.net/static/js/3.0.4/av-min.js"></script>
+  <script src="//cdn.jsdelivr.net/npm/valine"></script>
+  <script type="text/javascript">
+  var GUEST = ['nick', 'mail', 'link'];
+  var meta = 'nick,mail,link';
+  meta = meta.split(',').filter(function(item) {
+    return GUEST.indexOf(item) > -1;
+  });
+  new Valine({
+    el: '#vcomments',
+    verify: false,
+    notify: false,
+    appId: '',
+    appKey: '',
+    placeholder: 'Just go go',
+    avatar: 'mm',
+    meta: meta,
+    pageSize: '10' || 10,
+    visitor: false
+  });
+  </script>
+
+     
+
+
+
+
+
+
+
+</body>
+</html>
